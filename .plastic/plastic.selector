@@ -1,0 +1,4 @@
+repository "Juego_Fosa/Juego_Fosa@6872554402338@cloud"
+  path "/"
+    br "/main"
+    co "/main"
