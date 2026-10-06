@@ -10,15 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a00e108c3c71c4a48818a163cac620ee, type: 3}
-  m_Name: Prueba
+  m_Name: EUTortilla1
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Cubo
-    dialogueLine: Soy un cubo que gira
+  - speakerName: Eugenia
+    dialogueLine: "Ya ver\xE1s como la mia si, la mia no es como las dem\xE1s."
     eventType: 0
     optionalParameter: 
-    options:
-    - optionText: Comenzar otro dialogo
-      nextDialogue: {fileID: 11400000, guid: 53ccea4aa38ea74478f41e1499de76b8, type: 2}
-    - optionText: Cerrar
-      nextDialogue: {fileID: 0}
+    options: []

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00e108c3c71c4a48818a163cac620ee, type: 3}
+  m_Name: EUPresentar
+  m_EditorClassIdentifier: 
+  converationLines:
+  - speakerName: Antonio
+    dialogueLine: "Encantado, yo soy Antonio, he venido de la consejer\xEDa del Medio
+      Ambiente a hacer un trabajo a Monteviejo.\r"
+    eventType: 0
+    optionalParameter: 
+    options: []
+  - speakerName: Eugenia
+    dialogueLine: "Uuuuuuh, cerebro privilegiado. Ma\xF1ana pasate por casa que te
+      voy a preparar una tortillica que te vas a chupar los dedos, ya lo ver\xE1s.\r\n\r"
+    eventType: 0
+    optionalParameter: 
+    options:
+    - optionText: No soy muy fan de la tortilla
+      nextDialogue: {fileID: 11400000, guid: 89d3c4f906af8ce4293ae5dfc68b9691, type: 2}
+    - optionText: "\xBFLleva cebolla?"
+      nextDialogue: {fileID: 11400000, guid: 5ae54991a47a7e74f87d251d4284408b, type: 2}
+    - optionText: No hace falta Eugenia
+      nextDialogue: {fileID: 11400000, guid: ba12574b09f748643b9088f74932fb46, type: 2}

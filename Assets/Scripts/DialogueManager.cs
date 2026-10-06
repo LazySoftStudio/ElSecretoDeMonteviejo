@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         nameQHabla = new List<string>();
         lines = new List<string>();
+        opcionesActuales = new List<Option>();
         if (Instance == null)
         {
             Instance = this;
@@ -108,7 +109,7 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
-        TextMeshProUGUI[] l = option1.gameObject.GetComponentsInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI[] l = option1.gameObject.GetComponent<TMPGetter>().GetTexts();
         if (opcionesActuales.Count == 1)
         {
             option1.SetActive(true);
@@ -116,20 +117,21 @@ public class DialogueManager : MonoBehaviour
         if (opcionesActuales.Count == 2)
         {
             option2.SetActive(true);
-            l = option2.gameObject.GetComponentsInChildren<TextMeshProUGUI>();
+            l = option2.gameObject.GetComponent<TMPGetter>().GetTexts();
         }
         if (opcionesActuales.Count == 3)
         {
             option3.SetActive(true);
-            l = option3.gameObject.GetComponentsInChildren<TextMeshProUGUI>();
+            l = option3.gameObject.GetComponent<TMPGetter>().GetTexts();
         }
         if (opcionesActuales.Count == 4)
         {
             option4.SetActive(true);
-            l = option4.gameObject.GetComponentsInChildren<TextMeshProUGUI>();
+            l = option4.gameObject.GetComponent<TMPGetter>().GetTexts();
         }
         //poner textos
-        for (int i = 0; i < opcionesActuales.Count; i++)
+        Debug.Log(opcionesActuales.Count + " - "+l.Length);
+        for (int i = 0; i < l.Length; i++)
         {
             l[i].text = opcionesActuales[i].optionText;
         }

@@ -10,13 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a00e108c3c71c4a48818a163cac620ee, type: 3}
-  m_Name: Diag2
+  m_Name: EUCalcetin
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Cubo 2
-    dialogueLine: 'Este es el dialogo 2 '
+  - speakerName: Antonio
+    dialogueLine: "Tengo un calcet\xEDn con un tomate, \xBFMe lo coser\xEDa?"
+    eventType: 0
+    optionalParameter: 
+    options: []
+  - speakerName: Eugenia
+    dialogueLine: "Claro, tu p\xE1samelo y yo  ma\xF1ana te lo remiendo.\r\n"
     eventType: 0
     optionalParameter: 
     options:
-    - optionText: Volver al anterior
-      nextDialogue: {fileID: 11400000, guid: c710e9101ac42ab4787226cafe2ab8d0, type: 2}
+    - optionText: Genial
+      nextDialogue: {fileID: 11400000, guid: 66cb1865af69a0548a150b50cf534845, type: 2}
