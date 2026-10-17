@@ -1,0 +1,40 @@
+Scene Transitions Free
+
+Documentation. 8 full-screen transitions in one line of C#: 6 patterns, 2 rule masks.
+
+  Resources/Scene Transitions Free/   the shaders (Transition) and Masks/, the rule masks
+  Scripts/SceneTransition.cs   ChangeScene, Cover, Reveal; MakeMaterial for a material to drive yourself
+  Demo/SceneTransitionsFreeDemo.unity   a button per style, over a meadow and a dungeon; its code in Scripts/Demo/,
+                         its sprites in DemoArt/
+
+Use:
+  SceneTransition.ChangeScene("Level2", "diamonds");   // a scene in the build's scene list
+  yield return SceneTransition.Cover("iris", new SceneTransition.Options { CenterOn = player });
+  // ...teleport the player, load a save...
+  yield return SceneTransition.Reveal("iris");
+
+No setup: the first call makes the transition's canvas, kept across scene loads. Each call returns
+its coroutine, to yield on; starting one while another plays replaces it.
+
+Styles (SceneTransition.Styles lists them):
+  patterns: fade, dither, wipe, diamonds, circles, iris
+  rule masks: clouds, spots
+Any greyscale texture is a style too (import it with sRGB off): black covers first, white last.
+
+Options (SceneTransition.Options; any left null keeps the default): Duration (seconds per half,
+0.45), Color (black), Ease (time to progress, sine in and out), RevealStyle (ChangeScene reveals
+with another style), Center (a viewport point, y up, that iris close on) or
+CenterOn (a Transform: a UI element, or an object the main camera sees), Angle (degrees, 0 = left
+to right, 90 = bottom to top), Cells (across the screen's height), Softness (edge blur, 0 to 0.5),
+Flip (backwards: iris opens), PixelSize (chunky edges for pixel art, in screen pixels), Seed.
+
+Without code: give a RawImage a material of the "Scene Transitions Free/Transition" shader, pick its Style and
+animate Progress from 0 to 1 (an Animator, a Timeline). SceneTransition.MakeMaterial(style, options)
+makes the same material.
+
+The transition's canvas is Screen Space - Overlay at sorting order 1000: canvases above it stay on
+top. It runs on unscaled time, so while the game is paused too, and it blocks clicks on UI while it
+covers.
+
+Needs Unity 6.3 or later, in any render pipeline: the shaders are UI shaders, tested in Built-in,
+URP (2D and Universal Renderer) and HDRP. The demo runs on either input handler.

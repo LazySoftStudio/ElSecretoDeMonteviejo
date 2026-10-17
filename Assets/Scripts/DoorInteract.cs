@@ -1,3 +1,4 @@
+using HeyHeyThere.SceneTransitionsFree;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +13,9 @@ public class DoorInteract : MonoBehaviour, IInteractive
 
     public void Interact()
     {
-        SceneManager.LoadScene(sceneIndex);
+        //SceneManager.LoadScene(sceneIndex);
+        SceneTransition.ChangeScene(sceneIndex, "diamonds");//uso del asset
+        
     }
 
     public void OnExit()

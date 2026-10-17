@@ -1,0 +1,6 @@
+{
+    "name": "HeyHeyThere.SceneTransitionsFree",
+    "rootNamespace": "HeyHeyThere.SceneTransitionsFree",
+    "references": ["UnityEngine.UI"],
+    "autoReferenced": true
+}

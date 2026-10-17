@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: aa77f3339b06d332a2368f8fe88d28a6
+TextureImporter:
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    enableMipMap: 0
+    sRGBTexture: 0
+  alphaUsage: 0
+  textureType: 0
+  textureShape: 1
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 412666
+  packageName: Scene Transitions Free - Shader Sampler
+  packageVersion: 1.0.1
+  assetPath: Assets/SceneTransitionsFree/Resources/Scene Transitions Free/Masks/clouds.png
+  uploadId: 1012122

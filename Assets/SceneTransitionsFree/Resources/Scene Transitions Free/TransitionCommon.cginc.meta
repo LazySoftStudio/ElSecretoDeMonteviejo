@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: c23000603b786efc492f8c791d06e377
+AssetOrigin:
+  serializedVersion: 1
+  productId: 412666
+  packageName: Scene Transitions Free - Shader Sampler
+  packageVersion: 1.0.1
+  assetPath: Assets/SceneTransitionsFree/Resources/Scene Transitions Free/TransitionCommon.cginc
+  uploadId: 1012122
