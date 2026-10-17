@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class BasicInteract : MonoBehaviour
 {
-    public Camera cam;
     public float dist = 3.0f;
     public Color hoverColor = Color.green;
 
     private IInteractive current;
     private Outline r;
+    public GameObject interactObj;
 
     void Update()
     {
@@ -39,7 +39,7 @@ public class BasicInteract : MonoBehaviour
                 Clear();
                 current = closest;
                 current.OnHover();
-
+                interactObj.SetActive(true);
                 r = closestCol.GetComponent<Outline>();  
                 if (r)
                 {
@@ -53,6 +53,7 @@ public class BasicInteract : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 current.Interact();
+                interactObj.SetActive(false);
                 if (current.GetDialogue() != null && DialogueManager.Instance.ct == null)
                 {
                     DialogueManager.Instance.DecirDialogo(current.GetDialogue());
@@ -70,6 +71,7 @@ public class BasicInteract : MonoBehaviour
         if (current != null)
         {
             current.OnExit();
+            interactObj.SetActive(false);
         }
         if (r)
         {

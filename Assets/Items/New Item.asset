@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c893002c3511f548ae4cea94c833570, type: 3}
+  m_Name: New Item
+  m_EditorClassIdentifier: 
+  item:
+    imagen: {fileID: 1496597455, guid: 4e6e21c0bfd21a04aae8eb77b906d178, type: 3}
+    nombreItem: UV de Antonio
+    type: 0
