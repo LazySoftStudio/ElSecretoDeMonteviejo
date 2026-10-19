@@ -3,7 +3,132 @@ guid: da8ae5c793bb19145a13b398c00767b2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Baldas_Madera
+    second: {fileID: 2100000, guid: 7b802e2dee4f4faf9522fc19711474db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Barro_Cantaro
+    second: {fileID: 2100000, guid: f480c689b7bc46e99c4e9ac74de85d5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Barro_Tinaja
+    second: {fileID: 2100000, guid: edfcc9f7d34c49c6b4056826658faa94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Barro_Vidriado_Azul
+    second: {fileID: 2100000, guid: d36cd13e79704643824c340383b3ab42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Barro_Vidriado_Melado
+    second: {fileID: 2100000, guid: b615298a7ac74a18adcad549babd806e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Campana_Hollin
+    second: {fileID: 2100000, guid: ee60098ee1964d7ebc633740a35cd962, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Cordel
+    second: {fileID: 2100000, guid: de285a35b64344b28a065f1a17438325, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Cortina_Vichy
+    second: {fileID: 2100000, guid: b6bf0ffdf64f4b2c8aec1e7219beb158, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Foto_Calle
+    second: {fileID: 2100000, guid: 6c35c99cb0d24cbb823187601e86b049, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Foto_Camino
+    second: {fileID: 2100000, guid: 0c7ec2596cfa47a78f8460d33bb3c8bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Foto_Ermita
+    second: {fileID: 2100000, guid: 9a961ab407d841a19ece73512f72fbdc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Foto_Siega
+    second: {fileID: 2100000, guid: e9cb4e7021ac45f1ab74c1d471f3ae28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Fregadero_Azulejo
+    second: {fileID: 2100000, guid: bb42a5d12fdb48d3b81b3396a081f646, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Lumbre_Ladrillo
+    second: {fileID: 2100000, guid: 17f7efee1ae54f1b8414d241aaa82ff9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Marco_Madera
+    second: {fileID: 2100000, guid: faa978227a7c4f5dad2f7bb75879cb9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Mesa_Madera
+    second: {fileID: 2100000, guid: 49faa726ac19457eb652b406b792041e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Pared_Cal
+    second: {fileID: 2100000, guid: fcf8d3b240db4a7aad1f6b56f6620927, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Puerta_Calle
+    second: {fileID: 2100000, guid: 82ba4797ce784a2199399d12bfa02299, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Puerta_Habitacion
+    second: {fileID: 2100000, guid: 65561be67126426f91ec42cb967a322b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Silla_Enea
+    second: {fileID: 2100000, guid: 1814dd7f773b4073b96844c8baaf98c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Silla_Pino
+    second: {fileID: 2100000, guid: 7654fc3e286e43c5b3f0e1ce8f14f462, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Suelo_Barro
+    second: {fileID: 2100000, guid: 21a9e829dba14b259c4366bbdb3afb5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Techo_Cal
+    second: {fileID: 2100000, guid: 3717992f84c44608bc710f2af49eb33f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Ventana_Contraventana
+    second: {fileID: 2100000, guid: c178acd1b4a140798ac5c664894f103f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CE_Vigas_Madera
+    second: {fileID: 2100000, guid: 739add464b0a4cdbbd3ece19bedbedf7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
