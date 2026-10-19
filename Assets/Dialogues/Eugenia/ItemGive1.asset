@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00e108c3c71c4a48818a163cac620ee, type: 3}
+  m_Name: ItemGive1
+  m_EditorClassIdentifier: 
+  converationLines:
+  - speakerName: cvdsughbajin
+    dialogueLine: Tome este objeto random
+    eventType: 2
+    optionalParameter: 
+    options: []
+    itemsToGive:
+    - {fileID: 11400000, guid: b67b19922c3642a469d81f00b0b2afd3, type: 2}

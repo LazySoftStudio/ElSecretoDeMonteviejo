@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class DialogueManager : MonoBehaviour
     public ConversationTemplate ct;
     private int index;
     private GameObject player;
+    private bool hayQDarItem = false;
+    public GameObject itemsVisuals;
+    public Image itemIMG;
+    public TextMeshProUGUI itemText;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -57,7 +62,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && ct != null)
         {
             if (textComponet.text == lines[index])
             {
@@ -140,6 +145,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeLIne()
     {
+        hayQDarItem = ct.converationLines[index].eventType == DialogueEventType.GiveItem;
         nombre.text = nameQHabla[index];
         foreach (char c in lines[index].ToCharArray())
         {
@@ -151,6 +157,19 @@ public class DialogueManager : MonoBehaviour
 
     private void NextLine()
     {
+        itemsVisuals.SetActive(hayQDarItem);
+        if (hayQDarItem)//me tiene que dar un objeto
+        {
+            foreach (ItemSO i in ct.converationLines[index].itemsToGive)
+            {
+                Inventory.Singleton.AddItem(i);
+                itemText.text = i.item.nombreItem;
+                itemIMG.sprite = i.item.imagen;
+            }
+            hayQDarItem = false;
+            return;
+        }
+        
         option1.SetActive(false);
         option2.SetActive(false);
         option3.SetActive(false);

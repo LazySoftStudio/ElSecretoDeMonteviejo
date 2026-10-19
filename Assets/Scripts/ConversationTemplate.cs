@@ -26,7 +26,7 @@ public struct Line
     public DialogueEventType eventType;
     public string optionalParameter;
     public List<Option> options;
-    //public List<DyalogueItemReward> itemsToGive; //por hacer
+    public List<ItemSO> itemsToGive; 
 }
 [CreateAssetMenu(fileName = "New Conversation", menuName = "Dialogue/Conversation")]
 public class ConversationTemplate : ScriptableObject
