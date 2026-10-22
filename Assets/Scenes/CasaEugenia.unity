@@ -1919,7 +1919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8ffa2023f54474393339edc1aacc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 0
+  sceneIndex: 1
 --- !u!64 &677860351
 MeshCollider:
   m_ObjectHideFlags: 0
