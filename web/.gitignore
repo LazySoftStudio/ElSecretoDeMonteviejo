@@ -1,8 +1,0 @@
-node_modules/
-dist/
-coverage/
-*.tsbuildinfo
-.env*
-*.pem
-*.log
-.DS_Store
