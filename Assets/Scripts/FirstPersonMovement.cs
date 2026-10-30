@@ -9,6 +9,9 @@ public class FirstPersonMovement : MonoBehaviour
 
     private CharacterController controller;
     private float xRotation = 0f;
+    [SerializeField] private float gravity = -9.81f;
+    public bool lockMovement = false;
+    private float verticalVelocity;
 
     void Start()
     {
@@ -20,6 +23,10 @@ public class FirstPersonMovement : MonoBehaviour
 
     void Update()
     {
+        if (lockMovement)
+        {
+            return;
+        }
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -34,5 +41,19 @@ public class FirstPersonMovement : MonoBehaviour
 
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
+        // Aplicar gravedad
+        if (controller.isGrounded)
+        {
+            verticalVelocity = -1f; // pegado al suelo
+        }
+        else
+        {
+            verticalVelocity += gravity * Time.deltaTime;
+        }
+
+        move.y = verticalVelocity;
+
+        // Mover personaje con colisiones
+        controller.Move(move * Time.deltaTime);
     }
 }

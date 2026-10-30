@@ -54,7 +54,7 @@ public class DialogueManager : MonoBehaviour
         option2.SetActive(false);
         option3.SetActive(false);
         option4.SetActive(false);
-        player.GetComponent<PlayerMovement>().lockMovement = true;
+        player.GetComponent<FirstPersonMovement>().lockMovement = true;
         StartDialogue();//cambiar
     }
 
@@ -87,7 +87,7 @@ public class DialogueManager : MonoBehaviour
         {
             padre1.SetActive(false);
             padre2.SetActive(false);
-            player.GetComponent<PlayerMovement>().lockMovement = false;
+            player.GetComponent<FirstPersonMovement>().lockMovement = false;
             ct = null;
             return;
         }
@@ -186,7 +186,7 @@ public class DialogueManager : MonoBehaviour
             //nada mas que decir
             padre1.SetActive(false);
             padre2.SetActive(false);
-            player.GetComponent<PlayerMovement>().lockMovement = false;
+            player.GetComponent<FirstPersonMovement>().lockMovement = false;
             ct = null;
         }
     }
