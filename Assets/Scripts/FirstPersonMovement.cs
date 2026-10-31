@@ -23,10 +23,15 @@ public class FirstPersonMovement : MonoBehaviour
         //restaura la posicion anterior
         if (restaurarValores)
         {
-            transform.position = DataRestorerer.Singleton.GetLastPos();
-            transform.rotation = DataRestorerer.Singleton.GetLastRotation();
+            DatosPartida datos = SavePartida.Singleton.Cargar();
+            if (datos == null) datos = new DatosPartida();
+
+            Teletransportar(datos.posicion, datos.rotacion);
+            //transform.position = DataRestorerer.Singleton.GetLastPos();
+            //transform.rotation = DataRestorerer.Singleton.GetLastRotation();
         }
     }
+    
 
     void Update()
     {
@@ -62,5 +67,14 @@ public class FirstPersonMovement : MonoBehaviour
 
         // Mover personaje con colisiones
         controller.Move(move * Time.deltaTime);
+    }
+    void Teletransportar(Vector3 pos, Quaternion rot)
+    {
+        CharacterController cc = GetComponent<CharacterController>();
+        if (cc != null) cc.enabled = false;
+
+        transform.SetPositionAndRotation(pos, rot);
+
+        if (cc != null) cc.enabled = true;
     }
 }

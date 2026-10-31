@@ -15,7 +15,8 @@ public class DoorInteract : MonoBehaviour, IInteractive
     {
         //SceneManager.LoadScene(sceneIndex);
         GameObject player = GameObject.FindWithTag("Player");
-        DataRestorerer.Singleton.SetData(player.transform.position, player.transform.rotation, sceneIndex);
+        SavePartida.Singleton.Guardar(player.transform.position, player.transform.rotation, sceneIndex);
+        //DataRestorerer.Singleton.SetData(player.transform.position, player.transform.rotation, sceneIndex);
         SceneTransition.ChangeScene(sceneIndex, "diamonds");//uso del asset
         
     }
