@@ -12,6 +12,7 @@ public class FirstPersonMovement : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     public bool lockMovement = false;
     private float verticalVelocity;
+    [SerializeField] private bool restaurarValores = false;
 
     void Start()
     {
@@ -19,6 +20,12 @@ public class FirstPersonMovement : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        //restaura la posicion anterior
+        if (restaurarValores)
+        {
+            transform.position = DataRestorerer.Singleton.GetLastPos();
+            transform.rotation = DataRestorerer.Singleton.GetLastRotation();
+        }
     }
 
     void Update()

@@ -79,6 +79,8 @@ public class DialogueManager : MonoBehaviour
 
     private void StartDialogue()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         index = 0;
         nameQHabla.Clear();
         opcionesActuales.Clear();
@@ -188,6 +190,8 @@ public class DialogueManager : MonoBehaviour
             padre2.SetActive(false);
             player.GetComponent<FirstPersonMovement>().lockMovement = false;
             ct = null;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 

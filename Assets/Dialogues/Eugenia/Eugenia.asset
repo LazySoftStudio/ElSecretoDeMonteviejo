@@ -19,9 +19,10 @@ MonoBehaviour:
     eventType: 0
     optionalParameter: 
     options:
-    - optionText: "\xBFC\xF3mo ha dicho que se llamaba?"
+    - optionText: "\xBFC\xF3mo se llamaba?"
       nextDialogue: {fileID: 11400000, guid: 4271f4a8e3a113e4ca2e6b02bf170c00, type: 2}
-    - optionText: "\xBFMe ayudar\xEDa con una cosa?"
+    - optionText: Necesito su ayuda
       nextDialogue: {fileID: 11400000, guid: 31a2ea0b8c5178841b5280de0f1bba0e, type: 2}
     - optionText: Ahora me presento
       nextDialogue: {fileID: 11400000, guid: 317dcbfafdaf4d840b03bd7e650c53a0, type: 2}
+    itemsToGive: []
