@@ -23,7 +23,7 @@ public class FirstPersonMovement : MonoBehaviour
         //restaura la posicion anterior
         if (restaurarValores)
         {
-            DatosPartida datos = SavePartida.Singleton.Cargar();
+            DatosPartida datos = SavePartida.Singleton.Cargar(SavePartida.Singleton.GetKey());
             if (datos == null) datos = new DatosPartida();
 
             Teletransportar(datos.posicion, datos.rotacion);

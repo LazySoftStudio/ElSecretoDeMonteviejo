@@ -17,4 +17,7 @@ MonoBehaviour:
     dialogueLine: "Ya ver\xE1s como la mia si, la mia no es como las dem\xE1s."
     eventType: 0
     optionalParameter: 
-    options: []
+    options:
+    - optionText: Seguro que esta rica
+      nextDialogue: {fileID: 11400000, guid: 317dcbfafdaf4d840b03bd7e650c53a0, type: 2}
+    itemsToGive: []

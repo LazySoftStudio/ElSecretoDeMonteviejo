@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SavePartida : MonoBehaviour
 {
-    private const string CLAVE = "Partida1";
+    private  string llave;
 
     public static SavePartida Singleton;
     private DatosPartida actual;
@@ -26,15 +26,15 @@ public class SavePartida : MonoBehaviour
     {
         datos.ultimoGuardado = DateTime.Now.ToString("o");
         string json = JsonUtility.ToJson(datos);
-        PlayerPrefs.SetString(CLAVE, json);
+        PlayerPrefs.SetString(llave, json);
         PlayerPrefs.Save(); // fuerza la escritura
     }
 
-    public DatosPartida Cargar()
+    public DatosPartida Cargar(string key)
     {
-        if (!PlayerPrefs.HasKey(CLAVE)) return null;
-
-        string json = PlayerPrefs.GetString(CLAVE);
+        if (!PlayerPrefs.HasKey(key)) return null;
+        llave = key;// actualiza la llave
+        string json = PlayerPrefs.GetString(key);
         actual = JsonUtility.FromJson<DatosPartida>(json);
         return actual;
     }
@@ -54,15 +54,23 @@ public class SavePartida : MonoBehaviour
             actual.rotacion = rot;
         }
         string json = JsonUtility.ToJson(actual);
-        PlayerPrefs.SetString(CLAVE, json);
+        PlayerPrefs.SetString(llave, json);
         PlayerPrefs.Save();
     }
 
-    public bool ExisteGuardado() => PlayerPrefs.HasKey(CLAVE);
+    public bool ExisteGuardado(string key) => PlayerPrefs.HasKey(key);
 
-    public void Borrar()
+    public void Borrar(string key)
     {
-        PlayerPrefs.DeleteKey(CLAVE);
+        PlayerPrefs.DeleteKey(key);
         PlayerPrefs.Save();
+    }
+    public void SetKey(string key)
+    {
+        llave = key;
+    }
+    public string GetKey()
+    {
+        return llave;
     }
 }

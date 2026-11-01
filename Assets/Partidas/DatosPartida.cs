@@ -14,5 +14,5 @@ public class DatosPartida
     public Vector3 posicionCasa;
     public Quaternion rotacionCasa;
     //fecha
-    public string ultimoGuardado = string.Empty;
+    public string ultimoGuardado;
 }

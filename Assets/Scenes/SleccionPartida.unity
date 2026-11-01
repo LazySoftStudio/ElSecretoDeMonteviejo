@@ -1905,6 +1905,7 @@ MonoBehaviour:
   partida1: {fileID: 1745419973}
   partida2: {fileID: 1734435504}
   date1: {fileID: 1151109932}
+  date2: {fileID: 416962870}
 --- !u!4 &1292808205
 Transform:
   m_ObjectHideFlags: 0
