@@ -34,7 +34,7 @@ public class CineMoverRaton : MonoBehaviour
         // 2. Acumulamos el valor en lugar de sobreescribirlo 
         offsetZAcumulado += mouseY;
 
-        offsetZAcumulado = Mathf.Clamp(offsetZAcumulado, 0f, 50f);
+        offsetZAcumulado = Mathf.Clamp(offsetZAcumulado, 20f, 100f);
 
         chla.LookAtOffset = new Vector3(chla.LookAtOffset.x, chla.LookAtOffset.y, offsetZAcumulado);
     }

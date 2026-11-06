@@ -5,8 +5,9 @@ using UnityEngine;
 [Serializable]
 public class DatosPartida
 {
-    public Vector3 posicion = new Vector3(-1894.44f, -2.579f, 99.81f);//harcodeado posicion inicial
-    public Quaternion rotacion = new Quaternion(0f, 0.4f, 0f, 0.9f);
+    public Vector3 posicion = new Vector3(-1906.63f, 0.2f, 112.61f);//harcodeado posicion inicial
+    //public Quaternion rotacion = new Quaternion(-0.6725f, 0.2185f, 0.2185f, -0.6725f);
+    public Quaternion rotacion = Quaternion.Euler(0f, 216f, 90f);
     //inventario
     public int sceneNumber = 1;//pueblo
 

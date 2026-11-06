@@ -42,7 +42,7 @@ public class FirstPersonMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        Vector3 move = (transform.right * horizontal + transform.forward * vertical).normalized;
+        Vector3 move = (-transform.up * horizontal + transform.forward * vertical).normalized;
         controller.Move(move * moveSpeed * Time.deltaTime);
 
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
@@ -52,7 +52,7 @@ public class FirstPersonMovement : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -70f, 20f);
 
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+        transform.Rotate(Vector3.right * mouseX);
         // Aplicar gravedad
         if (controller.isGrounded)
         {

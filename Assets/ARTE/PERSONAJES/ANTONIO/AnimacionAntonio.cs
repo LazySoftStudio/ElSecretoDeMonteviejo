@@ -3,9 +3,11 @@ using UnityEngine;
 public class AnimacionAntonio : MonoBehaviour
 {
     private Animator animador;
+    private FirstPersonMovement fpm;
     void Start()
     {
         animador = GetComponent<Animator>();
+        fpm = GetComponent<FirstPersonMovement>();
     }
     void Update()
     {
@@ -18,11 +20,13 @@ public class AnimacionAntonio : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) //Correr
             {
+                fpm.moveSpeed = 6;//corriendo
                 animador.SetBool("IsAndando",  false);
                 animador.SetBool("IsCorriendo", true);
             }
             else // andar
             {
+                fpm.moveSpeed = 1.5f;//andando
                 animador.SetBool("IsAndando", true);
                 animador.SetBool("IsCorriendo", false);
             }
