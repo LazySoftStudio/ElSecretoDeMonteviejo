@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -11,15 +12,18 @@ public class Inventory : MonoBehaviour
         {
             Singleton = this;
             inventory = new Dictionary<string, ItemSO>();
+            
             DontDestroyOnLoad(Singleton);
         }
         else
         {
             Destroy(gameObject);
+            Debug.Log("S destruyo un inventario");
         }
     }
+ 
 
-
+    
     public void AddItem(ItemSO newItem)
     {
         if (!HasItem(newItem.name))
@@ -46,6 +50,16 @@ public class Inventory : MonoBehaviour
        
     }
 
+    public int NItems()
+        { return inventory.Count; }
 
+    public Dictionary<string, ItemSO> GetInventory()
+    {
+        return inventory;
+    }
+    public void Restore(DatosPartida datos)
+    {
+        inventory = datos.inventario;//recupera
+    }
 
 }

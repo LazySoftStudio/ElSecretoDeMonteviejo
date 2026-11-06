@@ -20,12 +20,13 @@ public class FirstPersonMovement : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        DatosPartida datos = SavePartida.Singleton.Cargar(SavePartida.Singleton.GetKey());
+        if (datos == null) datos = new DatosPartida();
+        
         //restaura la posicion anterior
         if (restaurarValores)
         {
-            DatosPartida datos = SavePartida.Singleton.Cargar(SavePartida.Singleton.GetKey());
-            if (datos == null) datos = new DatosPartida();
-
+            Inventory.Singleton.Restore(datos);
             Teletransportar(datos.posicion, datos.rotacion);
             //transform.position = DataRestorerer.Singleton.GetLastPos();
             //transform.rotation = DataRestorerer.Singleton.GetLastRotation();
