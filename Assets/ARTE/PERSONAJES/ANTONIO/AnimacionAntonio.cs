@@ -4,6 +4,7 @@ public class AnimacionAntonio : MonoBehaviour
 {
     private Animator animador;
     private FirstPersonMovement fpm;
+    private float velocidadObjetivo = 1.5f;
     void Start()
     {
         animador = GetComponent<Animator>();
@@ -20,24 +21,26 @@ public class AnimacionAntonio : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) //Correr
             {
-                fpm.moveSpeed = 6;//corriendo
+                velocidadObjetivo = 6;
                 animador.SetBool("IsAndando",  false);
                 animador.SetBool("IsCorriendo", true);
             }
             else // andar
             {
-                fpm.moveSpeed = 1.5f;//andando
+                velocidadObjetivo = 1.5f;//andando
                 animador.SetBool("IsAndando", true);
                 animador.SetBool("IsCorriendo", false);
             }
         } 
         else // parar
         {
+            velocidadObjetivo = 0;
             animador.SetBool("IsAndando", false);
             animador.SetBool("IsCorriendo", false);
         }
+        fpm.moveSpeed = Mathf.MoveTowards(fpm.moveSpeed, velocidadObjetivo, 10f * Time.deltaTime);
 
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             animador.SetTrigger("Sentarse");
         }
@@ -53,7 +56,7 @@ public class AnimacionAntonio : MonoBehaviour
         {
             animador.SetTrigger("Victoria");
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             animador.SetTrigger("Interactuar");
         }

@@ -25,7 +25,6 @@ public class SavePartida : MonoBehaviour
     public void Guardar(DatosPartida datos)
     {
         datos.ultimoGuardado = DateTime.Now.ToString("o");
-        datos.inventario = Inventory.Singleton.GetInventory();
         string json = JsonUtility.ToJson(datos);
         PlayerPrefs.SetString(llave, json);
         PlayerPrefs.Save(); // fuerza la escritura
@@ -37,6 +36,7 @@ public class SavePartida : MonoBehaviour
         llave = key;// actualiza la llave
         string json = PlayerPrefs.GetString(key);
         actual = JsonUtility.FromJson<DatosPartida>(json);
+        Inventory.Singleton.Restore(actual.inventario);
         return actual;
     }
     public void Guardar(Vector3 pos, Quaternion rot, int scene)
@@ -46,6 +46,26 @@ public class SavePartida : MonoBehaviour
         Debug.Log(actual.ultimoGuardado);
         actual.sceneNumber = scene;
         if (scene == 1)//voy al pueblo
+        {
+            actual.posicionCasa = pos;
+            actual.rotacionCasa = rot;
+        }
+        else//voy a una casa
+        {
+            actual.posicion = pos;
+            actual.rotacion = rot;
+        }
+        string json = JsonUtility.ToJson(actual);
+        PlayerPrefs.SetString(llave, json);
+        PlayerPrefs.Save();
+    }
+
+    public void QuickSave(Vector3 pos, Quaternion rot, int scene)
+    {
+        actual.ultimoGuardado = DateTime.Now.ToString("o");
+        actual.inventario = Inventory.Singleton.GetInventory();
+        actual.sceneNumber = scene;
+        if (scene != 1)//voy al pueblo
         {
             actual.posicionCasa = pos;
             actual.rotacionCasa = rot;

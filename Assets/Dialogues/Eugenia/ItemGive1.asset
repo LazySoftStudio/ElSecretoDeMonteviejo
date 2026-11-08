@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   converationLines:
   - speakerName: cvdsughbajin
-    dialogueLine: Tome este objeto random
+    dialogueLine: Tome esta foto
     eventType: 2
     optionalParameter: 
     options: []

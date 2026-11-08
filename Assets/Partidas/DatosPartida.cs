@@ -9,7 +9,7 @@ public class DatosPartida
     //public Quaternion rotacion = new Quaternion(-0.6725f, 0.2185f, 0.2185f, -0.6725f);
     public Quaternion rotacion = Quaternion.Euler(0f, 216f, 90f);
     //inventario
-    public Dictionary<string, ItemSO> inventario = new Dictionary<string, ItemSO>();
+    public List<string> inventario = new List<string>();
     public int sceneNumber = 1;//pueblo
 
     //si se ha entrado en alguna casa

@@ -1,6 +1,7 @@
 using HeyHeyThere.SceneTransitionsFree;
 using System;
 using System.Globalization;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,6 +15,8 @@ public class PartidaManager : MonoBehaviour
     [SerializeField] private Button partida2;
     [SerializeField] private TextMeshProUGUI date1;
     [SerializeField] private TextMeshProUGUI date2;
+    [SerializeField] private TextMeshProUGUI obj1;
+    [SerializeField] private TextMeshProUGUI obj2;
     private int partidaSeleccionada = -1;
 
     private void Awake()
@@ -59,26 +62,32 @@ public class PartidaManager : MonoBehaviour
     void RellenarTextos()
     {
         string date;
+        string obj;
         if (!SavePartida.Singleton.ExisteGuardado("Partida0"))
         {
             date = "--/--/---";
+            obj = "Objetos: -";
         }
         else
         {
             date = SavePartida.Singleton.Cargar("Partida0").ultimoGuardado;
+            obj = "Objetos: "+SavePartida.Singleton.Cargar("Partida0").inventario.Count.ToString();
             DateTime fecha = DateTime.Parse(date, null, DateTimeStyles.RoundtripKind);
             date = fecha.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
         }
 
         date1.text = date;
+        obj1.text = obj;
 
         if (!SavePartida.Singleton.ExisteGuardado("Partida1"))
         {
             date = "--/--/---";
+            obj = "Objetos: -";
         }
         else
         {
             date = SavePartida.Singleton.Cargar("Partida1").ultimoGuardado;
+            obj = "Objetos: "+SavePartida.Singleton.Cargar("Partida1").inventario.Count.ToString();
             if (date != null) {
                 DateTime fecha = DateTime.Parse(date, null, DateTimeStyles.RoundtripKind);
                 date = fecha.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -88,7 +97,7 @@ public class PartidaManager : MonoBehaviour
                 date = "--/--/---";
             }
         }
-
+        obj2.text = obj;
         date2.text = date;
     }
 

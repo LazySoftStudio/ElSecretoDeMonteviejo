@@ -19,13 +19,13 @@ public class InteriorMOvement : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        DatosPartida datos = SavePartida.Singleton.Cargar(SavePartida.Singleton.GetKey());
-        if (datos == null) datos = new DatosPartida();
+        
         
         //restaura la posicion anterior
         if (restaurarValores)
         {
-            Inventory.Singleton.Restore(datos);
+            DatosPartida datos = SavePartida.Singleton.Cargar(SavePartida.Singleton.GetKey());
+            if (datos == null) datos = new DatosPartida();
             Teletransportar(datos.posicion, datos.rotacion);
             //transform.position = DataRestorerer.Singleton.GetLastPos();
             //transform.rotation = DataRestorerer.Singleton.GetLastRotation();
