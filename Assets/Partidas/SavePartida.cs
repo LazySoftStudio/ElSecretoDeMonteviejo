@@ -80,6 +80,13 @@ public class SavePartida : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void AnimacionInicialHecha()
+    {
+        actual.animacionInicial = true;
+        string json = JsonUtility.ToJson(actual);
+        PlayerPrefs.SetString(llave, json);
+        PlayerPrefs.Save();
+    }
     public bool ExisteGuardado(string key) => PlayerPrefs.HasKey(key);
 
     public void Borrar(string key)

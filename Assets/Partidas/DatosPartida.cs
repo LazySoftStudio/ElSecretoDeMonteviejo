@@ -17,4 +17,6 @@ public class DatosPartida
     public Quaternion rotacionCasa;
     //fecha
     public string ultimoGuardado;
+    //animacion inicial
+    public bool animacionInicial = false;
 }

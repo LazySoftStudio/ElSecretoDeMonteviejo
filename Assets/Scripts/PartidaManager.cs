@@ -113,11 +113,13 @@ public class PartidaManager : MonoBehaviour
         {
             SavePartida.Singleton.SetKey(key);
             SavePartida.Singleton.Guardar(new DatosPartida());
-            scene = 1;
+            scene = 5;//animacion inicial
         }
         else
         {
+
             scene = SavePartida.Singleton.Cargar(key).sceneNumber;
+            if (!SavePartida.Singleton.Cargar(key).animacionInicial) scene = 5;
         }
             
         SceneTransition.ChangeScene(scene, "diamonds");
