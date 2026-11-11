@@ -20,6 +20,10 @@ public class CicloDiaNoche : MonoBehaviour
 
     private void Start()
     {
+        //carga
+        DatosPartida datos = SavePartida.Singleton.Cargar(SavePartida.Singleton.GetKey());
+        if (datos == null) datos = new DatosPartida();
+        Hora = datos.horaDia;
         SetMaterial(dia, 1f);
         SetMaterial(noche, 0f);
     }

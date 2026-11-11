@@ -43,6 +43,8 @@ public class SavePartida : MonoBehaviour
     {
         actual.ultimoGuardado = DateTime.Now.ToString("o");
         actual.inventario = Inventory.Singleton.GetInventory();
+        CicloDiaNoche ciclo = GameObject.FindWithTag("DiaNoche").GetComponent<CicloDiaNoche>();
+        if (ciclo) actual.horaDia = ciclo.Hora;
         Debug.Log(actual.ultimoGuardado);
         actual.sceneNumber = scene;
         if (scene == 1)//voy al pueblo
@@ -64,6 +66,8 @@ public class SavePartida : MonoBehaviour
     {
         actual.ultimoGuardado = DateTime.Now.ToString("o");
         actual.inventario = Inventory.Singleton.GetInventory();
+        CicloDiaNoche ciclo = GameObject.FindWithTag("DiaNoche").GetComponent<CicloDiaNoche>();
+        if (ciclo) actual.horaDia = ciclo.Hora;
         actual.sceneNumber = scene;
         if (scene != 1)//voy al pueblo
         {
