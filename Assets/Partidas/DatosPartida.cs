@@ -21,4 +21,5 @@ public class DatosPartida
     //animacion inicial
     public bool animacionInicial = false;
     public float horaDia = 10;
+
 }
