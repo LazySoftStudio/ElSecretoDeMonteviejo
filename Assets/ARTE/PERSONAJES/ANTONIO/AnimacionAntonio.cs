@@ -5,9 +5,13 @@ public class AnimacionAntonio : MonoBehaviour
     private Animator animador;
     private FirstPersonMovement fpm;
     private float velocidadObjetivo = 1.5f;
+    public AudioClip andarSound;
+    public AudioClip runSound;
+    [SerializeField] private AudioSource audioSource;
     void Start()
     {
         animador = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         fpm = GetComponent<FirstPersonMovement>();
     }
     void Update()
@@ -21,12 +25,22 @@ public class AnimacionAntonio : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) //Correr
             {
+                if (audioSource.clip != runSound || !audioSource.isPlaying)
+                {
+                    audioSource.clip = runSound;
+                    audioSource.Play();
+                }
                 velocidadObjetivo = 6;
                 animador.SetBool("IsAndando",  false);
                 animador.SetBool("IsCorriendo", true);
             }
             else // andar
             {
+                if (audioSource.clip != andarSound || !audioSource.isPlaying)
+                {
+                    audioSource.clip = andarSound;
+                    audioSource.Play();
+                }
                 velocidadObjetivo = 1.5f;//andando
                 animador.SetBool("IsAndando", true);
                 animador.SetBool("IsCorriendo", false);
@@ -34,6 +48,11 @@ public class AnimacionAntonio : MonoBehaviour
         } 
         else // parar
         {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+                audioSource.clip = null;
+            }
             velocidadObjetivo = 0;
             animador.SetBool("IsAndando", false);
             animador.SetBool("IsCorriendo", false);

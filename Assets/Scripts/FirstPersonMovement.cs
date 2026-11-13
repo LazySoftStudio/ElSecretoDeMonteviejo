@@ -13,11 +13,12 @@ public class FirstPersonMovement : MonoBehaviour
     public bool lockMovement = false;
     private float verticalVelocity;
     [SerializeField] private bool restaurarValores = false;
+    
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-
+ 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         

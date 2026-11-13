@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ArchivoInteract : MonoBehaviour, IInteractive
 {
@@ -17,6 +18,8 @@ public class ArchivoInteract : MonoBehaviour, IInteractive
 
     public void Interact()
     {
+        InteriorMOvement player = GameObject.FindWithTag("Player").GetComponent<InteriorMOvement>();
+        player.lockMovement = true;
         panelArchivos.SetActive(true);
         Time.timeScale = 0;//para juego
         Cursor.lockState = CursorLockMode.None;
@@ -26,6 +29,8 @@ public class ArchivoInteract : MonoBehaviour, IInteractive
 
     public void OnExit()
     {
+        InteriorMOvement player = GameObject.FindWithTag("Player").GetComponent<InteriorMOvement>();
+        player.lockMovement = false;
         panelArchivos.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
