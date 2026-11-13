@@ -164,7 +164,7 @@ public class DialogueManager : MonoBehaviour
         {
             foreach (ItemSO i in ct.converationLines[index].itemsToGive)
             {
-                Inventory.Singleton.AddItem(i);
+                Inventory.Singleton.AddItem(i.item.nombreItem);
                 itemText.text = i.item.nombreItem;
                 itemIMG.sprite = i.item.imagen;
             }

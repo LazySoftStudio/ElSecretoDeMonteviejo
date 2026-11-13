@@ -13,9 +13,9 @@ public class InventarioUI : MonoBehaviour
     {
         if (Inventory.Singleton == null || botones.Length == 0 || textos.Length == 0) return;
 
-        List<ItemSO> actuales = Inventory.Singleton.GetInventory();
+        List<ItemSO> actuales = ItemBD.Singleton.GetItems(Inventory.Singleton.GetInventoryNombres());
 
-        int mostrar = Inventory.Singleton.NItems();
+        int mostrar = actuales.Count;
 
         for (int i = 0; i < botones.Length; i++)
         {

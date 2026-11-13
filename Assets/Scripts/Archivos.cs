@@ -66,14 +66,14 @@ public class Archivos: MonoBehaviour
 
     private void Guardar()
     {
-        ItemSO artGuardado = CrearArticulo(); 
-        Inventory.Singleton.AddItem(artGuardado);
+        //ItemSO artGuardado = CrearArticulo(); 
+        Inventory.Singleton.AddItem(articulos[articuloActivo].name);
     }
     private void Devolver()
     {
         Inventory.Singleton.RemoveItem(articulos[articuloActivo].name);
     }
-
+    //se podria borrar la funcion
     private ItemSO CrearArticulo()
     {
         ItemSO nuevoItem = ScriptableObject.CreateInstance<ItemSO>();
