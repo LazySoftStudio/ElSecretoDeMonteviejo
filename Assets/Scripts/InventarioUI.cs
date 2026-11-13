@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,23 +9,28 @@ public class InventarioUI : MonoBehaviour
     public TextMeshProUGUI[] textos;
 
 
-
-
-
-
-
     private void OnGUI()
     {
-        if (!botones[0]) return;
-        if (!textos[0]) return;
+        if (Inventory.Singleton == null || botones.Length == 0 || textos.Length == 0) return;
+
+        List<ItemSO> actuales = Inventory.Singleton.GetInventory();
+
         int mostrar = Inventory.Singleton.NItems();
+
         for (int i = 0; i < botones.Length; i++)
         {
-            if (mostrar > 0)
+            if (i < mostrar)
             {
+                //actializar datos
+                textos[i].text = actuales[i].item.nombreItem;
+                Image imagenDelBoton = botones[i].GetComponent<Image>();
+                if (imagenDelBoton != null && actuales[i].item.imagen != null)
+                {
+                    imagenDelBoton.sprite = actuales[i].item.imagen;
+                }
+
                 botones[i].gameObject.SetActive(true);
                 textos[i].gameObject.SetActive(true);
-                mostrar--;
             }
             else
             {

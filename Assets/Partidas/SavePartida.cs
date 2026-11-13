@@ -42,7 +42,7 @@ public class SavePartida : MonoBehaviour
     public void Guardar(Vector3 pos, Quaternion rot, int scene)
     {
         actual.ultimoGuardado = DateTime.Now.ToString("o");
-        actual.inventario = Inventory.Singleton.GetInventory();
+        actual.inventario = Inventory.Singleton.GetInventoryNombres();
         CicloDiaNoche ciclo = GameObject.FindWithTag("DiaNoche").GetComponent<CicloDiaNoche>();
         if (ciclo) actual.horaDia = ciclo.Hora;
         Debug.Log(actual.ultimoGuardado);
@@ -65,7 +65,7 @@ public class SavePartida : MonoBehaviour
     public void QuickSave(Vector3 pos, Quaternion rot, int scene)
     {
         actual.ultimoGuardado = DateTime.Now.ToString("o");
-        actual.inventario = Inventory.Singleton.GetInventory();
+        actual.inventario = Inventory.Singleton.GetInventoryNombres();
         CicloDiaNoche ciclo = GameObject.FindWithTag("DiaNoche").GetComponent<CicloDiaNoche>();
         if (ciclo) actual.horaDia = ciclo.Hora;
         actual.sceneNumber = scene;
