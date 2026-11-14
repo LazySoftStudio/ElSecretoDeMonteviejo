@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c893002c3511f548ae4cea94c833570, type: 3}
-  m_Name: TabacoJuanFran
+  m_Name: Escuela
   m_EditorClassIdentifier: 
   item:
-    imagen: {fileID: -2023372571, guid: 7d4e4f9ed6dd80a4280a57fc3bc45550, type: 3}
-    nombreItem: Paquete El Botijo
-    type: 0
+    imagen: {fileID: 21300000, guid: bf1408d589fd3394a862f85abdea6a1b, type: 3}
+    nombreItem: Escuela
+    type: 1

@@ -1023,62 +1023,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687385621}
   m_CullTransparentMesh: 1
---- !u!1 &730673584
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 730673586}
-  - component: {fileID: 730673585}
-  m_Layer: 0
-  m_Name: ItemBD
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &730673585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730673584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1ef5a6506ae2a44bf9cf7313fdb0ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryItem:
-  - {fileID: 11400000, guid: b67b19922c3642a469d81f00b0b2afd3, type: 2}
-  - {fileID: 11400000, guid: daaf7603a2c2ff44cba1fdc4729e3589, type: 2}
-  - {fileID: 11400000, guid: 7162f68d251b31e4598696d4cdfd36f6, type: 2}
-  - {fileID: 11400000, guid: 8b39361e621365f44af83081037b9783, type: 2}
-  - {fileID: 11400000, guid: 9f4364c16a06d894fa7e40e03e35f8a2, type: 2}
-  inventoryName:
-  - Foto de Juan Fran
-  - Paquete El Botijo
-  - Articulo1
-  - Articulo2
-  - Articulo3
---- !u!4 &730673586
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730673584}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1914.4047, y: 26.201515, z: 92.18519}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &841500746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,6 +2866,92 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1852818936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852818938}
+  - component: {fileID: 1852818937}
+  m_Layer: 0
+  m_Name: ItemBD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1852818937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852818936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1ef5a6506ae2a44bf9cf7313fdb0ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryItem:
+  - {fileID: 11400000, guid: b67b19922c3642a469d81f00b0b2afd3, type: 2}
+  - {fileID: 11400000, guid: daaf7603a2c2ff44cba1fdc4729e3589, type: 2}
+  - {fileID: 11400000, guid: 7162f68d251b31e4598696d4cdfd36f6, type: 2}
+  - {fileID: 11400000, guid: 8b39361e621365f44af83081037b9783, type: 2}
+  - {fileID: 11400000, guid: 9f4364c16a06d894fa7e40e03e35f8a2, type: 2}
+  - {fileID: 11400000, guid: 191f9b6d39ece064abb1fb404eccb4c2, type: 2}
+  - {fileID: 11400000, guid: 754d8793994520a42a3234354f0bb873, type: 2}
+  - {fileID: 11400000, guid: 1dc927120819e0541b47abcf167f5f69, type: 2}
+  - {fileID: 11400000, guid: 7e7c94023f2bf1640a752efdb2c036d7, type: 2}
+  - {fileID: 11400000, guid: 863f23743dd70334c8499dee74609b6a, type: 2}
+  - {fileID: 11400000, guid: eae3c79cfa55aba42b5aa41b0a18b876, type: 2}
+  - {fileID: 11400000, guid: 4fc1d05ef61c849439a7b08b70b10a64, type: 2}
+  - {fileID: 11400000, guid: d8baa88950d3c7741a64c9f04ca46fb6, type: 2}
+  - {fileID: 11400000, guid: dae9287abe5b9414dbb202381c3ce476, type: 2}
+  - {fileID: 11400000, guid: 5016e4fb5f3b07e4fa1f655203e32555, type: 2}
+  - {fileID: 11400000, guid: 1e4e957c41c3f924fb22d4fa688a9f9e, type: 2}
+  - {fileID: 11400000, guid: a42bf874a3392284f8c90c03db83741b, type: 2}
+  - {fileID: 11400000, guid: 60deaa57680c6a54889ff49afb4da91e, type: 2}
+  - {fileID: 11400000, guid: 9596c930b51c90f4fbb3351708b22fba, type: 2}
+  - {fileID: 11400000, guid: 7bb5f570a3f1d214ca789aa3f5226bd7, type: 2}
+  inventoryName:
+  - Foto de Juan Fran
+  - Paquete El Botijo
+  - Articulo1
+  - Articulo2
+  - Articulo3
+  - Paula
+  - Ivan
+  - Dani
+  - Angel
+  - Alex
+  - Alberto
+  - Elecciones
+  - 6Jovenes
+  - Escuela
+  - Fuente
+  - FeriaGanado
+  - PremioPatatas44
+  - PremioPatatas48
+  - PremioPatatas62
+  - Tren
+--- !u!4 &1852818938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852818936}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1914.4047, y: 26.201515, z: 92.18519}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1924051469
 GameObject:
   m_ObjectHideFlags: 0
@@ -3249,4 +3279,4 @@ SceneRoots:
   - {fileID: 1292808205}
   - {fileID: 2037053187}
   - {fileID: 317592744}
-  - {fileID: 730673586}
+  - {fileID: 1852818938}
