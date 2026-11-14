@@ -9,7 +9,12 @@ public class Archivos: MonoBehaviour
 
     public TMP_Text botonGuardar;
     public TMP_Text nombreArticulo;
-    public Color oscurecer = new Color(1, 1, 1, 0.7f); 
+    public Color oscurecer = new Color(1, 1, 1, 0.7f);
+
+    public const int MAX_ARTICULOS = 3;
+    //public ConversationTemplate pensamiento; 
+    // poner esta variable en global para que se comparta entre todos los archivos
+    public int nArticulos = 0;  // la he puesto public para controlar, pero se supone que es private
 
     private int articuloActivo = 0;
 
@@ -56,10 +61,18 @@ public class Archivos: MonoBehaviour
         if (Inventory.Singleton.HasItem(nombreAct))
         {
             Devolver();
+            nArticulos--; 
         }
         else
         {
-            Guardar(); 
+            if(nArticulos < MAX_ARTICULOS)
+            {
+                Guardar();
+                nArticulos++; 
+            } else
+            {
+                // activar aquí el dialogo de pensamiento 
+            }
         }
         ActualizarUI(); 
     }
