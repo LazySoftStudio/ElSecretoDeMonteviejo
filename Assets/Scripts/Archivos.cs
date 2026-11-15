@@ -14,12 +14,14 @@ public class Archivos: MonoBehaviour
     public const int MAX_ARTICULOS = 3;
     //public ConversationTemplate pensamiento; 
     // poner esta variable en global para que se comparta entre todos los archivos
-    public int nArticulos = 0;  // la he puesto public para controlar, pero se supone que es private
+    private static int nArticulos = 0;  // static para que se comparta con todos
 
     private int articuloActivo = 0;
+    public ConversationTemplate pensamiento;
 
     public void Start()
     {
+        nArticulos = SavePartida.Singleton.GetArchivosGuardados();
         ActualizarUI(); 
     }
 
@@ -61,17 +63,22 @@ public class Archivos: MonoBehaviour
         if (Inventory.Singleton.HasItem(nombreAct))
         {
             Devolver();
-            nArticulos--; 
+            nArticulos--;
+            SavePartida.Singleton.SumarArchivo(-1);
         }
         else
         {
             if(nArticulos < MAX_ARTICULOS)
             {
                 Guardar();
-                nArticulos++; 
+                nArticulos++;
+                SavePartida.Singleton.SumarArchivo(1);
             } else
             {
                 // activar aquí el dialogo de pensamiento 
+                Debug.Log("Devuelve un archivo porque ya tienes 3");
+                DialogueManager.Instance.DecirDialogo(pensamiento);
+                Cerrar();
             }
         }
         ActualizarUI(); 
@@ -85,22 +92,6 @@ public class Archivos: MonoBehaviour
     private void Devolver()
     {
         Inventory.Singleton.RemoveItem(articulos[articuloActivo].name);
-    }
-    //se podria borrar la funcion
-    private ItemSO CrearArticulo()
-    {
-        ItemSO nuevoItem = ScriptableObject.CreateInstance<ItemSO>();
-
-        Image img = articulos[articuloActivo].GetComponent<Image>();
-        if (img != null)
-        {
-            nuevoItem.item.imagen = img.sprite;
-        }
-
-        nuevoItem.item.nombreItem = articulos[articuloActivo].name;
-        nuevoItem.item.type = ItemTypes.Periodico;
-
-        return nuevoItem; 
     }
 
     private void ActualizarUI()

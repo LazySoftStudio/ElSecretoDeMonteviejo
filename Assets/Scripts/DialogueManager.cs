@@ -54,7 +54,11 @@ public class DialogueManager : MonoBehaviour
         option2.SetActive(false);
         option3.SetActive(false);
         option4.SetActive(false);
-        player.GetComponent<FirstPersonMovement>().lockMovement = true;
+        FirstPersonMovement fpm = player.GetComponent<FirstPersonMovement>();
+        if (fpm) { fpm.lockMovement = true; } else
+        {
+            player.GetComponent<InteriorMOvement>().lockMovement = true;
+        }
         StartDialogue();//cambiar
     }
 
@@ -74,6 +78,17 @@ public class DialogueManager : MonoBehaviour
                 textComponet.text = lines[index];
             }
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            padre1.SetActive(false);
+            padre2.SetActive(false);
+            option1.SetActive(false);
+            option2.SetActive(false);
+            option3.SetActive(false);
+            option4.SetActive(false);  
+            itemsVisuals.SetActive(false);
+            ct = null;
+        }
 
     }
 
@@ -89,7 +104,12 @@ public class DialogueManager : MonoBehaviour
         {
             padre1.SetActive(false);
             padre2.SetActive(false);
-            player.GetComponent<FirstPersonMovement>().lockMovement = false;
+            FirstPersonMovement fpm = player.GetComponent<FirstPersonMovement>();
+            if (fpm) { fpm.lockMovement = false; }
+            else
+            {
+                player.GetComponent<InteriorMOvement>().lockMovement = false;
+            }
             ct = null;
             return;
         }
@@ -188,7 +208,12 @@ public class DialogueManager : MonoBehaviour
             //nada mas que decir
             padre1.SetActive(false);
             padre2.SetActive(false);
-            player.GetComponent<FirstPersonMovement>().lockMovement = false;
+            FirstPersonMovement fpm = player.GetComponent<FirstPersonMovement>();
+            if (fpm) { fpm.lockMovement = false; }
+            else
+            {
+                player.GetComponent<InteriorMOvement>().lockMovement = false;
+            }
             ct = null;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

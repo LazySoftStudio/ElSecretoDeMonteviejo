@@ -15,7 +15,7 @@ MonoBehaviour:
   converationLines:
   - speakerName: Antonio
     dialogueLine: "Creo que no coger\xE9 m\xE1s de 3 archivos para que no se den
-      cuenta"
+      cuenta."
     eventType: 0
     optionalParameter: 
     options: []

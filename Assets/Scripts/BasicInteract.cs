@@ -50,7 +50,7 @@ public class BasicInteract : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetButton("Interact"))
             {
                 current.Interact();
                 interactObj.SetActive(false);

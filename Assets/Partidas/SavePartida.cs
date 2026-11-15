@@ -106,4 +106,13 @@ public class SavePartida : MonoBehaviour
     {
         return llave;
     }
+
+    public void SumarArchivo(int sum)
+    {
+        actual.archivosGuardados += sum;
+    }
+    public int GetArchivosGuardados()
+    {
+        return actual.archivosGuardados;
+    }
 }

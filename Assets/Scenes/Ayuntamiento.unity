@@ -1812,7 +1812,7 @@ MonoBehaviour:
   botonGuardar: {fileID: 319541637}
   nombreArticulo: {fileID: 1350782950}
   oscurecer: {r: 1, g: 1, b: 1, a: 0.2}
-  nArticulos: 0
+  pensamiento: {fileID: 11400000, guid: 8c9af4edc4fa0e74dbae77160b1b19a5, type: 2}
 --- !u!114 &145750162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4447,7 +4447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.2599487, y: -0.289917}
+  m_AnchoredPosition: {x: -3.2600098, y: -0.289917}
   m_SizeDelta: {x: 24.680054, y: 20.040161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &440874978
@@ -6608,7 +6608,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1165168242}
   - {fileID: 750618633}
   - {fileID: 4328498}
   - {fileID: 1332612203}
@@ -6625,6 +6624,7 @@ RectTransform:
   - {fileID: 145750160}
   - {fileID: 800743628}
   - {fileID: 440874977}
+  - {fileID: 1165168242}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8509,7 +8509,7 @@ MonoBehaviour:
   botonGuardar: {fileID: 1913235136}
   nombreArticulo: {fileID: 1016098927}
   oscurecer: {r: 1, g: 1, b: 1, a: 0.2}
-  nArticulos: 0
+  pensamiento: {fileID: 11400000, guid: 8c9af4edc4fa0e74dbae77160b1b19a5, type: 2}
 --- !u!114 &800743630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9392,6 +9392,64 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1692864842085262862, guid: f3c493692f659a64da2266ae5d07a278, type: 3}
+--- !u!1 &840358372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 840358374}
+  - component: {fileID: 840358373}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &840358373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840358372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fd9b5631956d544a567d42569906c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponet: {fileID: 1430299502}
+  nombre: {fileID: 1072717073}
+  padre1: {fileID: 1165168241}
+  padre2: {fileID: 750618632}
+  option1: {fileID: 4328497}
+  option2: {fileID: 1332612202}
+  option3: {fileID: 15080810}
+  option4: {fileID: 1307256563}
+  textSpeed: 0.1
+  opcionesActuales: []
+  ct: {fileID: 0}
+  itemsVisuals: {fileID: 474168046}
+  itemIMG: {fileID: 1118545717}
+  itemText: {fileID: 1533418944}
+--- !u!4 &840358374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840358372}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.7, y: -0.15999998, z: -2.34}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &841228528 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2218788125778496466, guid: f3c493692f659a64da2266ae5d07a278, type: 3}
@@ -9962,7 +10020,7 @@ MonoBehaviour:
   botonGuardar: {fileID: 1376781788}
   nombreArticulo: {fileID: 802271705}
   oscurecer: {r: 1, g: 1, b: 1, a: 0.2}
-  nArticulos: 0
+  pensamiento: {fileID: 11400000, guid: 8c9af4edc4fa0e74dbae77160b1b19a5, type: 2}
 --- !u!114 &860364003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15357,7 +15415,7 @@ MonoBehaviour:
   botonGuardar: {fileID: 2147148514}
   nombreArticulo: {fileID: 518356623}
   oscurecer: {r: 1, g: 1, b: 1, a: 0.2}
-  nArticulos: 0
+  pensamiento: {fileID: 11400000, guid: 8c9af4edc4fa0e74dbae77160b1b19a5, type: 2}
 --- !u!114 &1109969332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16151,7 +16209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1474998346, guid: 67b6a2f16ee54dc4194f4210a8bb3b08, type: 3}
+  m_Sprite: {fileID: -1553109579, guid: f5fb9454c9425f848a619e9fed8bcff7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16634,7 +16692,7 @@ MonoBehaviour:
   botonGuardar: {fileID: 12756300}
   nombreArticulo: {fileID: 1056890221}
   oscurecer: {r: 1, g: 1, b: 1, a: 0.2}
-  nArticulos: 0
+  pensamiento: {fileID: 11400000, guid: 8c9af4edc4fa0e74dbae77160b1b19a5, type: 2}
 --- !u!114 &1192243058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17078,7 +17136,7 @@ Transform:
   m_GameObject: {fileID: 1213168617}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17161,7 +17219,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 2959
+  m_ColorTemperature: 5661
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -22128,7 +22186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 14.049995, y: -9.200012}
+  m_AnchoredPosition: {x: 14.050049, y: -9.200012}
   m_SizeDelta: {x: -484.30005, y: -86.80003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1602464357
@@ -25353,7 +25411,7 @@ MonoBehaviour:
   botonGuardar: {fileID: 530832607}
   nombreArticulo: {fileID: 497331893}
   oscurecer: {r: 1, g: 1, b: 1, a: 0.2}
-  nArticulos: 0
+  pensamiento: {fileID: 11400000, guid: 8c9af4edc4fa0e74dbae77160b1b19a5, type: 2}
 --- !u!114 &1897005620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26605,7 +26663,7 @@ MonoBehaviour:
   botonGuardar: {fileID: 1750354914}
   nombreArticulo: {fileID: 1382314264}
   oscurecer: {r: 1, g: 1, b: 1, a: 0.2}
-  nArticulos: 0
+  pensamiento: {fileID: 11400000, guid: 8c9af4edc4fa0e74dbae77160b1b19a5, type: 2}
 --- !u!1 &1996324272
 GameObject:
   m_ObjectHideFlags: 0
@@ -28344,3 +28402,4 @@ SceneRoots:
   - {fileID: 1919513883}
   - {fileID: 2070457224}
   - {fileID: 1207272433}
+  - {fileID: 840358374}
