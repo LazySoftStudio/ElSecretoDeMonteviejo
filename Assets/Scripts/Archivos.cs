@@ -16,6 +16,9 @@ public class Archivos: MonoBehaviour
     // poner esta variable en global para que se comparta entre todos los archivos
     private static int nArticulos = 0;  // static para que se comparta con todos
 
+    public AudioSource audioSource;
+    public AudioClip clip;
+
     private int articuloActivo = 0;
     public ConversationTemplate pensamiento;
 
@@ -33,7 +36,7 @@ public class Archivos: MonoBehaviour
         articulos[articuloActivo].SetActive(false);
         articuloActivo = (articuloActivo +1) % articulos.Length; 
         articulos[articuloActivo].SetActive(true);
-
+        audioSource.PlayOneShot(clip);
         ActualizarUI();
     }
 
@@ -44,7 +47,7 @@ public class Archivos: MonoBehaviour
         articulos[articuloActivo].SetActive(false);
         articuloActivo = (articuloActivo - 1 + articulos.Length) % articulos.Length;
         articulos[articuloActivo].SetActive(true);
-        
+        audioSource.PlayOneShot(clip);
         ActualizarUI();
     }
 

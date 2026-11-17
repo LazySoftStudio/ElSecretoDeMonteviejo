@@ -1,79 +1,110 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Audio; // 1. Añadimos la librería de Audio
 
-public class CicloDiaNoche : MonoBehaviour 
+public class CicloDiaNoche : MonoBehaviour
 {
-
-    [Range(0.0f, 24f)] public float Hora = 12f; // Hora inicial 12 del mediodia. Solo puede ir de 0 a 24
+    [Range(0.0f, 24f)] public float Hora = 12f;
     public Transform Sol;
     public Material dia;
     public Material noche;
 
-    public float DuracionDia = 1; //Duración del día en minutos
+    public float DuracionDia = 1; // Duración del día en minutos
 
-    public float InicioAmanecer = 5f; // Hora de inicio del amanecer
-    public float FinAmanecer = 7f; // Hora de fin del amanecer
+    public float InicioAmanecer = 5f;
+    public float FinAmanecer = 7f;
     public float InicioAtardecer = 17f;
     public float FinAtardecer = 19f;
+
+    [Header("Audio Ciclo Día/Noche")] 
+    public AudioMixerSnapshot snapshotDia;
+    public AudioMixerSnapshot snapshotNoche;
+    private bool esDeDia;
 
     private float SolX;
 
     private void Start()
     {
-        //carga
         DatosPartida datos = SavePartida.Singleton.Cargar(SavePartida.Singleton.GetKey());
         if (datos == null) datos = new DatosPartida();
         Hora = datos.horaDia;
+
         SetMaterial(dia, 1f);
         SetMaterial(noche, 0f);
-    }
 
+
+        if (Hora >= InicioAmanecer && Hora < InicioAtardecer)
+        {
+            esDeDia = true;
+            snapshotDia.TransitionTo(0f); 
+        }
+        else
+        {
+            esDeDia = false;
+            snapshotNoche.TransitionTo(0f);
+        }
+    }
 
     private void Update()
     {
-        Hora += Time.deltaTime * (24 / (60 * DuracionDia)); //Actualizar la hora
+        Hora += Time.deltaTime * (24 / (60 * DuracionDia));
 
-        //Evitar que se salga del rango de horas
-        if (Hora >= 24f){
+        if (Hora >= 24f)
+        {
             Hora = 0f;
         }
 
         RotacionSol();
-        MaterialCielo(); 
+        MaterialCielo();
+        ControlarMusica();
     }
 
+    void ControlarMusica()
+    {
+        if (Hora >= InicioAmanecer && Hora < InicioAtardecer && !esDeDia)
+        {
+            esDeDia = true;
+            // segundos reales dura el amanecer para sincronizar el audio
+            float horasAmanecer = FinAmanecer - InicioAmanecer;
+            float segundosTransicion = (horasAmanecer / 24f) * (DuracionDia * 60f);
 
+            snapshotDia.TransitionTo(segundosTransicion);
+        }
+        else if ((Hora >= InicioAtardecer || Hora < InicioAmanecer) && esDeDia)
+        {
+            esDeDia = false;
+            float horasAtardecer = FinAtardecer - InicioAtardecer;
+            float segundosTransicion = (horasAtardecer / 24f) * (DuracionDia * 60f);
 
-    // Dependiendo de la hora del día, el sol está en una posición u otra
+            snapshotNoche.TransitionTo(segundosTransicion);
+        }
+    }
+
     void RotacionSol()
     {
-        SolX = 15 * Hora; // 360 grados / 24 horas = 15 grados por hora
+        SolX = 15 * Hora;
         Sol.localEulerAngles = new Vector3(SolX, 0, 0);
-
     }
-
 
     void MaterialCielo()
     {
-        if (Hora >= InicioAmanecer && Hora <= FinAmanecer) // Amanecer
+        if (Hora >= InicioAmanecer && Hora <= FinAmanecer)
         {
             float t = (Hora - InicioAmanecer) / (FinAmanecer - InicioAmanecer);
             SetMaterial(dia, t);
             SetMaterial(noche, 1 - t);
 
-            Sol.GetComponent<Light>().intensity = t; // Encender la luz del sol
-
+            Sol.GetComponent<Light>().intensity = t;
         }
-        else if (Hora >= InicioAtardecer && Hora <= FinAtardecer) // Atardecer
+        else if (Hora >= InicioAtardecer && Hora <= FinAtardecer)
         {
             float t = (Hora - InicioAtardecer) / (FinAtardecer - InicioAtardecer);
             SetMaterial(dia, 1 - t);
             SetMaterial(noche, t);
 
-            Sol.GetComponent<Light>().intensity =1- t; // Apagar la luz del sol para que no alumine desde debajo del suelo
+            Sol.GetComponent<Light>().intensity = 1 - t;
         }
     }
-
 
     void SetMaterial(Material mat, float alpha)
     {
