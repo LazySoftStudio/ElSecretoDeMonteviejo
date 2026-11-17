@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 66a913870a665fc43b4031017ce03843
+guid: 29a2ec9c3724f614db7a4f6451535116
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: carretilla_0
+      name: Sprite tecla_0
       rect:
         serializedVersion: 2
-        x: 131
-        y: 57
-        width: 1139
-        height: 625
+        x: 17
+        y: 6
+        width: 309
+        height: 289
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38d6307ccf3df1246926178fa01a707b
-      internalID: -1856222977
+      spriteID: 747b722abd15ed4439043fdef3395b53
+      internalID: -325718392
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e509864ee9f751145bd6b86eb2d72c6f
+    spriteID: 16ae7d205bbc5374fae9be68c98ae411
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      carretilla_0: -1856222977
+      Sprite tecla_0: -325718392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
