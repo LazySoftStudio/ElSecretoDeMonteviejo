@@ -11,9 +11,9 @@ public class MusicController : MonoBehaviour
 
     private void Start()
     {
-        float masterGuardado = PlayerPrefs.GetFloat("VolumenMaster", 0.75f);
+        float masterGuardado = PlayerPrefs.GetFloat("VolumenMaster", 1f);
         float musicaGuardada = PlayerPrefs.GetFloat("VolumenMusica", 0.75f);
-        float sfxGuardado = PlayerPrefs.GetFloat("VolumenSFX", 0.75f);
+        float sfxGuardado = PlayerPrefs.GetFloat("VolumenSFX", 0.5f);
 
         sliderMaster.value = masterGuardado;
         sliderMusica.value = musicaGuardada;

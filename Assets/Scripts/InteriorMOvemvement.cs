@@ -12,11 +12,12 @@ public class InteriorMOvement : MonoBehaviour
     public bool lockMovement = false;
     private float verticalVelocity;
     [SerializeField] private bool restaurarValores = false;
+    private float prevSpeed;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-
+        prevSpeed = moveSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         
@@ -41,7 +42,14 @@ public class InteriorMOvement : MonoBehaviour
         }
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            moveSpeed = 2f * prevSpeed;
+        }
+        else
+        {
+            moveSpeed = prevSpeed;
+        }
         Vector3 move = (transform.right * horizontal + transform.forward * vertical).normalized;
         controller.Move(move * moveSpeed * Time.deltaTime);
 

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Paquete El Botijo
   m_EditorClassIdentifier: 
   item:
-    imagen: {fileID: -2023372571, guid: 7d4e4f9ed6dd80a4280a57fc3bc45550, type: 3}
+    imagen: {fileID: 370996226, guid: 57f480e0d7bbc4b498caea6e34346216, type: 3}
     nombreItem: Paquete El Botijo
     type: 0

@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Audio; // 1. Añadimos la librería de Audio
+using UnityEngine.Audio; 
 
 public class CicloDiaNoche : MonoBehaviour
 {
