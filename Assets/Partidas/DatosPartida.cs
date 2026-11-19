@@ -20,6 +20,7 @@ public class DatosPartida
     public string ultimoGuardado;
     //animacion inicial
     public bool animacionInicial = false;
+    public bool animacionBosque = false;
     public float horaDia = 10;
     public int archivosGuardados = 0;
 

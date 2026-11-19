@@ -55,6 +55,11 @@ public class Archivos: MonoBehaviour
     {
         archivo.SetActive(false); 
         Time.timeScale = 1f;
+        GameObject player = GameObject.FindWithTag("Player");
+        InteriorMOvement inm = player.GetComponent<InteriorMOvement>();
+        if (inm) inm.lockMovement = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void GuardarDevolver()

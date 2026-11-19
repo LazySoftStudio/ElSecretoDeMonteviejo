@@ -8,9 +8,15 @@ public class BasicInteract : MonoBehaviour
     private IInteractive current;
     private Outline r;
     public GameObject interactObj;
+    private float counter = 0;
 
     void Update()
     {
+        if (counter > 0)
+        {
+            counter-= Time.deltaTime;   
+            return;
+        }
         Collider[] hits = Physics.OverlapSphere(transform.position, dist);
 
         IInteractive closest = null;
@@ -52,6 +58,7 @@ public class BasicInteract : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E) || Input.GetButton("Interact"))
             {
+                counter = 1.0f;
                 current.Interact();
                 interactObj.SetActive(false);
                 if (current.GetDialogue() != null && DialogueManager.Instance.ct == null)

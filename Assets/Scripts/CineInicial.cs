@@ -12,6 +12,7 @@ public class CineInicial : MonoBehaviour
     private bool terminada;
     private float timer = 0;
     private CanvasGroup skipGroup;
+    public int sceneToChange = 1;
     void Reset() => animator = GetComponent<Animator>();
     
 
@@ -59,8 +60,15 @@ public class CineInicial : MonoBehaviour
                 terminada = true;
                 animator.speed = 0f;
                 Debug.Log("Animación terminada");
-                SavePartida.Singleton.AnimacionInicialHecha();
-                SceneTransition.ChangeScene(1, "fade");
+                if (sceneToChange == 1)//inicial cinematica
+                {
+                    SavePartida.Singleton.AnimacionInicialHecha();
+                }
+                else
+                {
+                    SavePartida.Singleton.AnimacionBosqueHecha();
+                }
+                SceneTransition.ChangeScene(sceneToChange, "fade");
             }
         }
     }
@@ -75,9 +83,16 @@ public class CineInicial : MonoBehaviour
         terminada = true;
         animator.speed = 0f;
         Debug.Log("Animación terminada");
-        SavePartida.Singleton.AnimacionInicialHecha();
+        if (sceneToChange == 1)//inicial cinematica
+        {
+            SavePartida.Singleton.AnimacionInicialHecha();
+        }
+        else
+        {
+            SavePartida.Singleton.AnimacionBosqueHecha();
+        } 
         yield return new WaitForSecondsRealtime(0.5f);
-        SceneTransition.ChangeScene(1, "fade");   // al pueblo
+        SceneTransition.ChangeScene(sceneToChange, "fade");   // al pueblo
     }
 
     public void QuitarPausa()

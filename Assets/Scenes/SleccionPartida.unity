@@ -3323,6 +3323,7 @@ MonoBehaviour:
   - PremioPatatas48
   - PremioPatatas62
   - Tren
+  cursor: {fileID: 2800000, guid: 3aa2d3d387a1565419e31edeaf276143, type: 3}
 --- !u!4 &1852818938
 Transform:
   m_ObjectHideFlags: 0

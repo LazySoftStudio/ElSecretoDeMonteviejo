@@ -64,7 +64,7 @@ public class UIutils : MonoBehaviour
             if (Time.timeScale == 0)
             {
                 if(fps) fps.lockMovement = false;
-                if (!antonio.GetComponent<FirstPersonMovement>()) antonio.GetComponent<InteriorMOvement>().lockMovement = false;
+                if (!fps) antonio.GetComponent<InteriorMOvement>().lockMovement = false;
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     inventario.SetActive(false);
@@ -80,7 +80,7 @@ public class UIutils : MonoBehaviour
             else
             {
                 if (fps) fps.lockMovement = false;
-                if (!antonio.GetComponent<FirstPersonMovement>()) antonio.GetComponent<InteriorMOvement>().lockMovement = true;
+                if (!fps) antonio.GetComponent<InteriorMOvement>().lockMovement = true;
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     inventario.SetActive(true);

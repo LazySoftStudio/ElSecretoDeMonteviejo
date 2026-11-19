@@ -7,6 +7,8 @@ public class ItemBD : MonoBehaviour
     [SerializeField] private List<ItemSO> inventoryItem;
     [SerializeField] private List<string> inventoryName;
     public static ItemBD Singleton;
+    [SerializeField] private Texture2D cursor;
+    private Vector2 hotSpot = new Vector2(4, 2);
 
 // ignorar lo de abajo, es solo para asegurar que este bien
 #if UNITY_EDITOR
@@ -23,6 +25,8 @@ public class ItemBD : MonoBehaviour
         {
             Singleton = this;
             DontDestroyOnLoad(Singleton);
+            if (!cursor) return;
+            Cursor.SetCursor(cursor, hotSpot, CursorMode.Auto);
         }
         else
         {

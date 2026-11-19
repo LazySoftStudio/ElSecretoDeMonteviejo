@@ -91,6 +91,14 @@ public class SavePartida : MonoBehaviour
         PlayerPrefs.SetString(llave, json);
         PlayerPrefs.Save();
     }
+
+    public void AnimacionBosqueHecha()
+    {
+        actual.animacionBosque = true;
+        string json = JsonUtility.ToJson(actual);
+        PlayerPrefs.SetString(llave, json);
+        PlayerPrefs.Save();
+    }
     public bool ExisteGuardado(string key) => PlayerPrefs.HasKey(key);
 
     public void Borrar(string key)
