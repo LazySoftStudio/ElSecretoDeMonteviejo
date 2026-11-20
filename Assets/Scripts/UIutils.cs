@@ -79,7 +79,7 @@ public class UIutils : MonoBehaviour
             }
             else
             {
-                if (fps) fps.lockMovement = false;
+                if (fps) fps.lockMovement = true;
                 if (!fps) antonio.GetComponent<InteriorMOvement>().lockMovement = true;
                 if (Input.GetKeyDown(KeyCode.Q))
                 {

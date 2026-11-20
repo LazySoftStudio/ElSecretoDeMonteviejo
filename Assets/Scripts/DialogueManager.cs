@@ -110,6 +110,8 @@ public class DialogueManager : MonoBehaviour
             {
                 player.GetComponent<InteriorMOvement>().lockMovement = false;
             }
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             ct = null;
             return;
         }

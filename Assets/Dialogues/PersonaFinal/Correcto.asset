@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   converationLines:
   - speakerName: ???
-    dialogueLine: "Juan Fran... Que jov\xE9n estaba en esa foto. Y esa marca de tabaco
-      era su favorita."
+    dialogueLine: "Juan Fran... Que jov\xE9n estaba en esa foto. Recuerdo a\xFAn
+      todas las veces que le llame \"El Botijo\", pero nunca termin\xF3 de acostumbrarse."
     eventType: 0
     optionalParameter: 
     options: []

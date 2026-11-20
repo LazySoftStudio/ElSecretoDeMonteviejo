@@ -13,12 +13,14 @@ public class CineInicial : MonoBehaviour
     private float timer = 0;
     private CanvasGroup skipGroup;
     public int sceneToChange = 1;
+    public AudioSource audioSource;
     void Reset() => animator = GetComponent<Animator>();
     
 
     void Awake()
     {
         skipGroup = skip.GetComponent<CanvasGroup>();
+        audioSource.PlayDelayed(0.7f);//retraso para que se ajuste con la animacion
     }
 
     void Update()
@@ -28,6 +30,14 @@ public class CineInicial : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pausado = !pausado;
+            if (pausado)
+            {
+                audioSource.Pause();
+            }
+            else
+            {
+                audioSource.UnPause();
+            }
             pausa.SetActive(pausado);
             animator.speed = pausado ? 0f : 1f;
         }
@@ -58,6 +68,7 @@ public class CineInicial : MonoBehaviour
             {
                 // Segunda pulsación: saltar la animación
                 terminada = true;
+                audioSource.Stop();
                 animator.speed = 0f;
                 Debug.Log("Animación terminada");
                 if (sceneToChange == 1)//inicial cinematica
@@ -79,7 +90,7 @@ public class CineInicial : MonoBehaviour
 
         yield return new WaitUntil(() =>
             animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
-
+        audioSource.Stop();
         terminada = true;
         animator.speed = 0f;
         Debug.Log("Animación terminada");
@@ -98,6 +109,7 @@ public class CineInicial : MonoBehaviour
     public void QuitarPausa()
     {
         pausado = false;
+        audioSource.UnPause();
         pausa.SetActive(pausado);
         animator.speed = pausado ? 0f : 1f;
     }

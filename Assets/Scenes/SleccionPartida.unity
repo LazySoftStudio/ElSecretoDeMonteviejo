@@ -3302,6 +3302,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60deaa57680c6a54889ff49afb4da91e, type: 2}
   - {fileID: 11400000, guid: 9596c930b51c90f4fbb3351708b22fba, type: 2}
   - {fileID: 11400000, guid: 7bb5f570a3f1d214ca789aa3f5226bd7, type: 2}
+  - {fileID: 11400000, guid: 595f4aa46e88077469f2859ae16e4894, type: 2}
   inventoryName:
   - Foto de Juan Fran
   - Paquete El Botijo
@@ -3323,6 +3324,7 @@ MonoBehaviour:
   - PremioPatatas48
   - PremioPatatas62
   - Tren
+  - Mechero JF+E
   cursor: {fileID: 2800000, guid: 3aa2d3d387a1565419e31edeaf276143, type: 3}
 --- !u!4 &1852818938
 Transform:
