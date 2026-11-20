@@ -5,9 +5,10 @@ using UnityEngine.Audio;
 public class CicloDiaNoche : MonoBehaviour
 {
     [Range(0.0f, 24f)] public float Hora = 12f;
-    public Transform Sol;
+    public Transform SolT;
     public Material dia;
     public Material noche;
+    public GameObject Sol; 
 
     public float DuracionDia = 1; // Duración del día en minutos
 
@@ -83,7 +84,7 @@ public class CicloDiaNoche : MonoBehaviour
     void RotacionSol()
     {
         SolX = 15 * Hora;
-        Sol.localEulerAngles = new Vector3(SolX, 0, 0);
+        SolT.localEulerAngles = new Vector3(SolX, 0, 0);
     }
 
     void MaterialCielo()

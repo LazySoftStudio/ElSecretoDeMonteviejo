@@ -2963,6 +2963,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.3474581
       objectReference: {fileID: 0}
+    - target: {fileID: 8674950181126577231, guid: f105a499784b8f44dba791d73775587f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b02833d978e386c4bbee91a869bd8a82, type: 2}
     - target: {fileID: 8710706787910172604, guid: f105a499784b8f44dba791d73775587f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
@@ -3033,9 +3037,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hora: 10
-  Sol: {fileID: 1475354650}
+  SolT: {fileID: 1475354650}
   dia: {fileID: 2100000, guid: 094bdc3e1ce2cee44a19abdc5fe7fe60, type: 2}
   noche: {fileID: 2100000, guid: be6c7db3acc3f1542a158bca88a29c5a, type: 2}
+  Sol: {fileID: 1475354649}
   DuracionDia: 15
   InicioAmanecer: 5
   FinAmanecer: 7

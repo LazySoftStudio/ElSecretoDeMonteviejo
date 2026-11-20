@@ -28,5 +28,12 @@ public class BosqueInteract : MonoBehaviour
                 gameObject.SetActive(false);//escondete
             }
         }
+        if (sceneIndex == 1)// ir al bosque
+        {
+            GameObject player = GameObject.FindWithTag("SalidaBosque");
+            SavePartida.Singleton.Guardar(player.transform.position, player.transform.rotation, 6);
+            SceneTransition.ChangeScene(sceneIndex, "diamonds");//uso del asset
+            return;
+        }
     }
 }
