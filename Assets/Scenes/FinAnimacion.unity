@@ -205,8 +205,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81800605}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.026683189, y: 0.99000764, z: 0.050486904, w: 0.12893388}
-  m_LocalPosition: {x: -375.63803, y: -196.31131, z: 474.57132}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -630,7 +630,7 @@ MonoBehaviour:
   animator: {fileID: 211106264}
   pausa: {fileID: 211725945}
   skip: {fileID: 1062268600}
-  sceneToChange: 1
+  sceneToChange: 4
   audioSource: {fileID: 197683776}
 --- !u!95 &211106264
 Animator:

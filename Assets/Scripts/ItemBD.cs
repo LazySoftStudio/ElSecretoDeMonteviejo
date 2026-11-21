@@ -33,7 +33,10 @@ public class ItemBD : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void FixedUpdate()
+    {
+        Cursor.SetCursor(cursor, hotSpot, CursorMode.Auto);// no es eficiente
+    }
     // Consigue un objeto
     public ItemSO GetItem(string name)
     {

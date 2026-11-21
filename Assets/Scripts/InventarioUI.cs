@@ -9,6 +9,7 @@ public class InventarioUI : MonoBehaviour
     public Image mostrar;
     public TextMeshProUGUI mostrarText;
     private bool mostarndoIMG = false;
+    public ItemSO cartaAbierta;
 
     private void Awake()
     {
@@ -51,6 +52,10 @@ public class InventarioUI : MonoBehaviour
     {
         List<ItemSO> actuales = ItemBD.Singleton.GetItems(Inventory.Singleton.GetInventoryNombres());
         ItemSO correcto = actuales[id];
+        if (correcto.item.nombreItem == "CartaCerrada")//la carta
+        {
+            correcto = cartaAbierta;
+        }
         if (correcto != null)
         {
             mostrarText.text = correcto.item.nombreItem;

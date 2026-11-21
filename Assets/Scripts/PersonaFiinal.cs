@@ -1,3 +1,4 @@
+using HeyHeyThere.SceneTransitionsFree;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,6 +39,19 @@ public class PersonaFiinal : MonoBehaviour, IInteractive
     }
 
     public void Interact() { }
-    public void OnExit() { }
+    public void OnExit() 
+    {
+        bool todoBien = true;
+        foreach (string item in itemsToCheck)
+        {
+            if (!Inventory.Singleton.HasItem(item)) { todoBien = false; break; }
+        }
+        if (!todoBien) return;
+        GameObject player = GameObject.FindWithTag("Player");
+        SavePartida.Singleton.Guardar(player.transform.position, player.transform.rotation, 8);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SceneTransition.ChangeScene(8, "diamonds");//uso del asset
+    }
     public void OnHover() { }
 }

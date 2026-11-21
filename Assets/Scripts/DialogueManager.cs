@@ -1,9 +1,10 @@
-using UnityEngine;
-using TMPro;
+using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
+using TMPro;
 using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -224,6 +225,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DecirDialogo(ConversationTemplate con)
     {
+        EventSystem.current.SetSelectedGameObject(null);//desmarca todos los botones
         StopAllCoroutines();
         ct = con;
         Empezar();

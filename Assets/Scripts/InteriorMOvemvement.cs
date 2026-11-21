@@ -13,14 +13,16 @@ public class InteriorMOvement : MonoBehaviour
     private float verticalVelocity;
     [SerializeField] private bool restaurarValores = false;
     private float prevSpeed;
-
+    public AudioClip andarSound;
+    public AudioClip runSound;
+    [SerializeField] private AudioSource audioSource;
     void Start()
     {
         controller = GetComponent<CharacterController>();
         prevSpeed = moveSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
+        audioSource = GetComponent<AudioSource>();
         
         //restaura la posicion anterior
         if (restaurarValores)
@@ -42,13 +44,38 @@ public class InteriorMOvement : MonoBehaviour
         }
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        bool moviendo = horizontal != 0 || vertical != 0;
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             moveSpeed = 2f * prevSpeed;
+            audioSource.pitch = 2f;
+            if ((audioSource.clip != runSound || !audioSource.isPlaying) && moviendo)
+            {
+                audioSource.clip = runSound;
+                audioSource.Play();
+            }
         }
         else
         {
-            moveSpeed = prevSpeed;
+            if (moviendo)
+            {
+                audioSource.pitch = 1.0f;
+                moveSpeed = prevSpeed;
+                if (audioSource.clip != andarSound || !audioSource.isPlaying)
+                {
+                    audioSource.clip = andarSound;
+                    audioSource.Play();
+                }
+            }
+        }
+        if (!moviendo)
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+                audioSource.pitch = 1f;
+                audioSource.clip = null;
+            }
         }
         Vector3 move = (transform.right * horizontal + transform.forward * vertical).normalized;
         controller.Move(move * moveSpeed * Time.deltaTime);

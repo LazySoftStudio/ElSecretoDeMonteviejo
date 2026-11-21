@@ -8,6 +8,7 @@ public class UIutils : MonoBehaviour
     public GameObject inventario;
     public GameObject antonio;
     public GameObject pausa;
+    public GameObject ajustes;
     public void ChangeScene(int sceneIndex) 
     {
         SceneTransition.ChangeScene(sceneIndex, "diamonds");//uso del asset
@@ -72,6 +73,7 @@ public class UIutils : MonoBehaviour
                 else
                 {
                     pausa.SetActive(false);
+                    ajustes.SetActive(false);
                 }
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
