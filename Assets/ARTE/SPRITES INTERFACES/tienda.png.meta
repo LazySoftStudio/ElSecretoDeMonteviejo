@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c1fbbe2e94485704e97e437c5f102710
+guid: c6df59313355a244792f1ff7b3de49db
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Puesto r\xFAstico de mercado con manzanas y queso_0"
+      name: tienda_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 93
-        width: 978
-        height: 755
+        x: 1299
+        y: 843
+        width: 940
+        height: 859
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51a312ac1aa74ec419caead55e87dc3b
-      internalID: -1176307192
+      spriteID: 3b46bc89be0130a4c94ef42d26eadf65
+      internalID: -524344846
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 854570736e2b5ec498ceb5a821b6c3d0
+    spriteID: d2a63900be8c4d34cb93104680572049
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Puesto r\xFAstico de mercado con manzanas y queso_0": -1176307192
+      tienda_0: -524344846
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
