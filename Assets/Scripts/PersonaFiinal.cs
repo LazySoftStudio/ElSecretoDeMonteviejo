@@ -41,6 +41,7 @@ public class PersonaFiinal : MonoBehaviour, IInteractive
     public void Interact() { }
     public void OnExit() 
     {
+        /*
         bool todoBien = true;
         foreach (string item in itemsToCheck)
         {
@@ -52,6 +53,7 @@ public class PersonaFiinal : MonoBehaviour, IInteractive
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneTransition.ChangeScene(8, "diamonds");//uso del asset
+        */
     }
     public void OnHover() { }
 }

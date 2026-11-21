@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Zagal
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Aldeano
+  - speakerName: Manola
     dialogueLine: "\xBFQu\xE9 hay, zagal? \xBFC\xF3mo va eso?"
     eventType: 0
     optionalParameter: 

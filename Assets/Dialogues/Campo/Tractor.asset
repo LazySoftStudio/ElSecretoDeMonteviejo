@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tractor
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Aldeano
+  - speakerName: Manola
     dialogueLine: "El tractor de Paco ya no tira ni para atr\xE1s."
     eventType: 0
     optionalParameter: 

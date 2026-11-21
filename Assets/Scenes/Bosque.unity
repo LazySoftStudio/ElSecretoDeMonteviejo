@@ -13106,6 +13106,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2832250006122358947, guid: 9515ba0bd72e8ab418a90422562e6ba5, type: 3}
+--- !u!1 &1053136447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1053136448}
+  m_Layer: 0
+  m_Name: TargetBosque
+  m_TagString: TargetBosque
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1053136448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053136447}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -1969.53, y: 13.18, z: 99.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1056904958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4433291126705300127, guid: fe1a9efc800fcf74e8421d507c4c2235, type: 3}
@@ -22132,7 +22163,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1573293741}
+        m_TargetAssemblyTypeName: MusicController, Assembly-CSharp
+        m_MethodName: CambiarSensibilidad
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1565891386
 GameObject:
   m_ObjectHideFlags: 0
@@ -22404,6 +22447,7 @@ MonoBehaviour:
   sliderMaster: {fileID: 1222731672}
   sliderMusica: {fileID: 926444305}
   sliderSFX: {fileID: 584766805}
+  sliderSensibilidad: {fileID: 1564941276}
 --- !u!4 &1573293742
 Transform:
   m_ObjectHideFlags: 0
@@ -30197,7 +30241,6 @@ SceneRoots:
   - {fileID: 1454352904}
   - {fileID: 1956245490}
   - {fileID: 1296745603}
-  - {fileID: 1176045941}
   - {fileID: 1776906166}
   - {fileID: 1398633833}
   - {fileID: 1146974489}
@@ -30215,6 +30258,7 @@ SceneRoots:
   - {fileID: 788085155}
   - {fileID: 562302636}
   - {fileID: 1989684374}
+  - {fileID: 1176045941}
   - {fileID: 478574133}
   - {fileID: 1182343534}
   - {fileID: 1802995614}
@@ -30284,3 +30328,4 @@ SceneRoots:
   - {fileID: 1573293742}
   - {fileID: 1868774110}
   - {fileID: 1883642686}
+  - {fileID: 1053136448}

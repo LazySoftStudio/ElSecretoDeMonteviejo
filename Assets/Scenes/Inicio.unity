@@ -630,7 +630,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2021957873}
+        m_TargetAssemblyTypeName: MusicController, Assembly-CSharp
+        m_MethodName: CambiarSensibilidad
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &68572645
 GameObject:
   m_ObjectHideFlags: 0
@@ -21778,6 +21790,7 @@ MonoBehaviour:
   sliderMaster: {fileID: 1462029681}
   sliderMusica: {fileID: 671720891}
   sliderSFX: {fileID: 573970574}
+  sliderSensibilidad: {fileID: 43692451}
 --- !u!4 &2021957874
 Transform:
   m_ObjectHideFlags: 0

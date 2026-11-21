@@ -23,5 +23,6 @@ public class DatosPartida
     public bool animacionBosque = false;
     public float horaDia = 10;
     public int archivosGuardados = 0;
+    public bool reposicionarEnBosque = true;
 
 }

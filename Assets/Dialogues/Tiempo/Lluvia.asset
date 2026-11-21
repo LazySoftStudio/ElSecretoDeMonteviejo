@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lluvia
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Aldeano
+  - speakerName: Manola
     dialogueLine: "Este a\xF1o no llueve ni a tiros."
     eventType: 0
     optionalParameter: 

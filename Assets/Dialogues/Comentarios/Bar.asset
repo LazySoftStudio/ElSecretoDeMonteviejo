@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bar
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Aldeano
+  - speakerName: Manola
     dialogueLine: "Si buscas algo, pregunta en el bar, all\xED se sabe todo."
     eventType: 0
     optionalParameter: 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tomates
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Aldeano
+  - speakerName: Manola
     dialogueLine: "Este a\xF1o los tomates vienen gordos."
     eventType: 0
     optionalParameter: 

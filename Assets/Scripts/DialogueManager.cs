@@ -1,3 +1,4 @@
+using HeyHeyThere.SceneTransitionsFree;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
@@ -217,9 +218,19 @@ public class DialogueManager : MonoBehaviour
             {
                 player.GetComponent<InteriorMOvement>().lockMovement = false;
             }
-            ct = null;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            if (ct.converationLines[index].eventType == DialogueEventType.ChangeScene)//cambiar de escena
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                string sceneName = ct.converationLines[index].optionalParameter.Trim();
+                ct = null;
+                GameObject player = GameObject.FindWithTag("Player");
+                SavePartida.Singleton.Guardar(player.transform.position, player.transform.rotation, 8);
+                SceneTransition.ChangeScene(sceneName, "diamonds");
+            }
+            ct = null;
         }
     }
 

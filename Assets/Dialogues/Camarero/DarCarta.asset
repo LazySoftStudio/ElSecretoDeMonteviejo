@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   converationLines:
   - speakerName: Gustavo
-    dialogueLine: "Te han dejado una carta Antonio, no se de quien es. La ancontr\xE9
+    dialogueLine: "Te han dejado una carta Antonio, no se de quien es. La encontr\xE9
       el otro dia en la barra."
     eventType: 2
     optionalParameter: 

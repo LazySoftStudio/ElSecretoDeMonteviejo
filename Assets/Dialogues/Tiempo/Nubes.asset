@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Nubes
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Aldeano
+  - speakerName: Manola
     dialogueLine: Mucha nube y poca agua, como siempre.
     eventType: 0
     optionalParameter: 

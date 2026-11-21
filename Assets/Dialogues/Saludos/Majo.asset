@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Majo
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Aldeano
+  - speakerName: Manola
     dialogueLine: "\xA1Ea! Buenas tardes, majo."
     eventType: 0
     optionalParameter: 

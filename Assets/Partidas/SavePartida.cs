@@ -114,7 +114,13 @@ public class SavePartida : MonoBehaviour
     {
         return llave;
     }
-
+    public void ReposicionarBosque()
+    {
+        actual.reposicionarEnBosque = false;
+        string json = JsonUtility.ToJson(actual);
+        PlayerPrefs.SetString(llave, json);
+        PlayerPrefs.Save();
+    }
     public void SumarArchivo(int sum)
     {
         actual.archivosGuardados += sum;

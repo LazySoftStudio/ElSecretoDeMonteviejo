@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -18,7 +19,7 @@ public class FirstPersonMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
- 
+        mouseSensitivity = PlayerPrefs.GetFloat("Sensibilidad", 1f);//sensibilidad
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         
@@ -78,5 +79,20 @@ public class FirstPersonMovement : MonoBehaviour
         transform.SetPositionAndRotation(pos, rot);
 
         if (cc != null) cc.enabled = true;
+    }
+    //cosas de sensibilidad
+    private void OnEnable()
+    {
+        MusicController.OnSensibilidadCambiada += ActualizarSensibilidad;
+    }
+
+    private void OnDisable()
+    {
+        MusicController.OnSensibilidadCambiada -= ActualizarSensibilidad;
+    }
+
+    private void ActualizarSensibilidad(float nuevaSensibilidad)
+    {
+        mouseSensitivity = nuevaSensibilidad;
     }
 }

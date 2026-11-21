@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Llaman
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Aldeano
+  - speakerName: Manola
     dialogueLine: "No andes meti\xE9ndote donde no te llaman."
     eventType: 0
     optionalParameter: 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rodilla
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Aldeano
+  - speakerName: Manola
     dialogueLine: 'Me duele la rodilla: va a cambiar el tiempo.'
     eventType: 0
     optionalParameter: 

@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class InteriorMOvement : MonoBehaviour
@@ -18,12 +19,13 @@ public class InteriorMOvement : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     void Start()
     {
+        mouseSensitivity = PlayerPrefs.GetFloat("Sensibilidad", 1f);//sensibilidad
         controller = GetComponent<CharacterController>();
         prevSpeed = moveSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         audioSource = GetComponent<AudioSource>();
-        
+
         //restaura la posicion anterior
         if (restaurarValores)
         {
@@ -103,12 +105,28 @@ public class InteriorMOvement : MonoBehaviour
         // Mover personaje con colisiones
         controller.Move(move * Time.deltaTime);
     }
-    void Teletransportar(Vector3 pos, Quaternion rot)
+    public void Teletransportar(Vector3 pos, Quaternion rot)
     {
         CharacterController cc = GetComponent<CharacterController>();
         if (cc != null) cc.enabled = false;
 
         transform.SetPositionAndRotation(pos, rot);
-
+        cc.enabled = true;
     }
+    //cosas sensibilidad
+    private void OnEnable()
+    {
+        MusicController.OnSensibilidadCambiada += ActualizarSensibilidad;
+    }
+
+    private void OnDisable()
+    {
+        MusicController.OnSensibilidadCambiada -= ActualizarSensibilidad;
+    }
+
+    private void ActualizarSensibilidad(float nuevaSensibilidad)
+    {
+        mouseSensitivity = nuevaSensibilidad;
+    }
+
 }

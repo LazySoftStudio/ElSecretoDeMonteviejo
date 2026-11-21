@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Trabajo
   m_EditorClassIdentifier: 
   converationLines:
-  - speakerName: Aldeano
+  - speakerName: Manola
     dialogueLine: Mira a ese, no trabaja ni aunque le paguen.
     eventType: 0
     optionalParameter: 

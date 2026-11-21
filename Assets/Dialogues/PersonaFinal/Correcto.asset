@@ -16,7 +16,7 @@ MonoBehaviour:
   - speakerName: ???
     dialogueLine: "Juan Fran... Que jov\xE9n estaba en esa foto. Recuerdo a\xFAn
       todas las veces que le llame \"El Botijo\", pero nunca termin\xF3 de acostumbrarse."
-    eventType: 0
-    optionalParameter: 
+    eventType: 1
+    optionalParameter: FinAnimacion
     options: []
     itemsToGive: []
