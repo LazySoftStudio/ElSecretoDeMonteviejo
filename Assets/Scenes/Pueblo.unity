@@ -29128,7 +29128,7 @@ MonoBehaviour:
   option2: {fileID: 1762146992}
   option3: {fileID: 185086124}
   option4: {fileID: 1702520337}
-  textSpeed: 0.1
+  textSpeed: 0.03
   opcionesActuales: []
   ct: {fileID: 0}
   itemsVisuals: {fileID: 275007321}
