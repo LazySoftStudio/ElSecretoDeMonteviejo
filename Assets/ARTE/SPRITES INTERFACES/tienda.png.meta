@@ -100,20 +100,64 @@ TextureImporter:
       name: tienda_0
       rect:
         serializedVersion: 2
-        x: 1299
-        y: 843
-        width: 940
-        height: 859
+        x: 1392
+        y: 914
+        width: 724
+        height: 656
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b46bc89be0130a4c94ef42d26eadf65
-      internalID: -524344846
+      spriteID: a452bafb18bbb0f40accf9523ac687ce
+      internalID: 203200952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tienda_1
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 1440
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7357b0da8ba8548b1d40cc4a50a4d0
+      internalID: 1375414207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tienda_2
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 1431
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a555512a841cf409bcb255e910e9ae
+      internalID: -1436861992
       vertices: []
       indices: 
       edges: []
@@ -122,7 +166,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d2a63900be8c4d34cb93104680572049
+    spriteID: b693a08937c25ac42ae5715a972bce04
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +176,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tienda_0: -524344846
+      tienda_0: 203200952
+      tienda_1: 1375414207
+      tienda_2: -1436861992
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

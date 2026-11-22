@@ -2480,6 +2480,7 @@ MonoBehaviour:
   skip: {fileID: 1062268600}
   sceneToChange: 6
   audioSource: {fileID: 197683776}
+  delay: 0.7
 --- !u!1 &1656605617
 GameObject:
   m_ObjectHideFlags: 0
