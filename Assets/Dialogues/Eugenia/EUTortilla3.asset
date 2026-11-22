@@ -15,7 +15,10 @@ MonoBehaviour:
   converationLines:
   - speakerName: Eugenia
     dialogueLine: "Bueeno, est\xE1 bien majo. Le dejo ya tranquilito para bajar las
-      maletas\u2026 Por cierto, una \xFAltima cosa\u2026Elige bien tu bando, hijo\u2026"
+      maletas\u2026 Por cierto, una \xFAltima cosa..."
     eventType: 0
     optionalParameter: 
-    options: []
+    options:
+    - optionText: Dime Eugenia
+      nextDialogue: {fileID: 11400000, guid: e1167191bb679d845b241288f28a1ec4, type: 2}
+    itemsToGive: []

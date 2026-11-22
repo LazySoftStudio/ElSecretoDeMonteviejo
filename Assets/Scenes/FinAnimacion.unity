@@ -525,7 +525,7 @@ MonoBehaviour:
   checkUpdate: 1
   inventario: {fileID: 0}
   antonio: {fileID: 0}
-  pausa: {fileID: 211725945}
+  pausa: {fileID: 0}
   ajustes: {fileID: 0}
 --- !u!114 &197683778
 MonoBehaviour:
@@ -631,8 +631,9 @@ MonoBehaviour:
   animator: {fileID: 211106264}
   pausa: {fileID: 211725945}
   skip: {fileID: 1062268600}
-  sceneToChange: 4
+  sceneToChange: -1
   audioSource: {fileID: 197683776}
+  delay: 0
 --- !u!95 &211106264
 Animator:
   serializedVersion: 7
@@ -2460,6 +2461,7 @@ MonoBehaviour:
   skip: {fileID: 1062268600}
   sceneToChange: 6
   audioSource: {fileID: 197683776}
+  delay: 0.7
 --- !u!1 &1656605617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,7 +2622,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1644991097}
+      - m_Target: {fileID: 211106263}
         m_TargetAssemblyTypeName: CineInicial, Assembly-CSharp
         m_MethodName: QuitarPausa
         m_Mode: 1

@@ -54,6 +54,8 @@ public class CinePelea : MonoBehaviour
     private bool nadieAtiende;
     private float esperaDialogo;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
     public bool EnDialogo => enDialogo;
     public PuntoDialogo DialogoActual { get; private set; }
 
@@ -72,6 +74,7 @@ public class CinePelea : MonoBehaviour
         AplicarHora();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
+        audioSource.Play();
     }
 
     void AplicarHora()
@@ -153,6 +156,7 @@ public class CinePelea : MonoBehaviour
         alPararParaDialogo.Invoke(p.id);
         nadieAtiende = !hayOyentes;
         esperaDialogo = esperaSiNadieAtiende;
+        audioSource.Pause();
         if (nadieAtiende)
             Debug.Log("dialogo " + p.id + " sin conectar");
     }
@@ -165,11 +169,14 @@ public class CinePelea : MonoBehaviour
         nadieAtiende = false;
         DialogoActual = null;
         if (!pausado && !terminada) animator.speed = 1f;
+        audioSource.UnPause();
     }
 
     void ActualizarSkip()
     {
-        if (pulsaciones == 1 && skipGroup != null)
+        // se ha puesto un boton de saltar pporque con los dialogos se puede saltar sin querer con el espacio
+        /*
+        if (pulsaciones == 2 && skipGroup != null)
         {
             timer -= Time.deltaTime;
             skipGroup.alpha = Mathf.Clamp01(timer / 3f);
@@ -183,20 +190,21 @@ public class CinePelea : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             pulsaciones++;
-            if (pulsaciones == 1)
+            if (pulsaciones == 2)
             {
                 if (skip != null)
                 {
                     if (skipGroup != null) skipGroup.alpha = 1f;
                     skip.SetActive(true);
                 }
-                timer = 3f;
+                timer = 2f;
             }
-            else if (pulsaciones >= 2)
+            else if (pulsaciones >= 3)
             {
                 Terminar();
             }
         }
+        */
     }
 
     IEnumerator Start()
@@ -209,7 +217,7 @@ public class CinePelea : MonoBehaviour
         if (!terminada) Terminar();
     }
 
-    void Terminar()
+    public void Terminar()
     {
         if (terminada) return;
         terminada = true;
@@ -234,6 +242,7 @@ public class CinePelea : MonoBehaviour
         animator.speed = 0f;
         AudioListener.pause = true;
         Cursor.visible = true;
+        audioSource.Pause();
     }
 
     public void QuitarPausa()
@@ -243,6 +252,7 @@ public class CinePelea : MonoBehaviour
         if (!enDialogo) animator.speed = 1f;
         AudioListener.pause = false;
         Cursor.visible = false;
+        audioSource.UnPause();
     }
 
     void OnDestroy()

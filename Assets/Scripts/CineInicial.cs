@@ -14,13 +14,14 @@ public class CineInicial : MonoBehaviour
     private CanvasGroup skipGroup;
     public int sceneToChange = 1;
     public AudioSource audioSource;
+    public float delay = 0.7f;
     void Reset() => animator = GetComponent<Animator>();
     
 
     void Awake()
     {
         skipGroup = skip.GetComponent<CanvasGroup>();
-        audioSource.PlayDelayed(0.7f);//retraso para que se ajuste con la animacion
+        audioSource.PlayDelayed(delay);//retraso para que se ajuste con la animacion
     }
 
     void Update()
@@ -69,17 +70,32 @@ public class CineInicial : MonoBehaviour
                 // Segunda pulsación: saltar la animación
                 terminada = true;
                 audioSource.Stop();
-                animator.speed = 0f;
+
+                // 1. Obtener el estado actual y adelantarlo al 100% (1f)
+                AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+                animator.Play(stateInfo.fullPathHash, 0, 1f);
+                animator.Update(0f); // Fuerza a Unity a colocar los objetos en su posición final ya mismo
+                animator.speed = 0f; // Congela la animación en ese último fotograma
+
                 Debug.Log("Animación terminada");
-                if (sceneToChange == 1)//inicial cinematica
+
+                if (sceneToChange == 1) // inicial cinematica
                 {
                     SavePartida.Singleton.AnimacionInicialHecha();
                 }
-                else
+                else if (sceneToChange != -1)
                 {
                     SavePartida.Singleton.AnimacionBosqueHecha();
                 }
-                SceneTransition.ChangeScene(sceneToChange, "fade");
+
+                if (sceneToChange != -1)
+                {
+                    SceneTransition.ChangeScene(sceneToChange, "fade");
+                }
+                else
+                {
+                    StartCoroutine(CineFinal()); // final
+                }
             }
         }
     }
@@ -89,7 +105,7 @@ public class CineInicial : MonoBehaviour
         yield return null;   // espera un frame para que el Animator evalúe el estado inicial
 
         yield return new WaitUntil(() =>
-            animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+        animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
         audioSource.Stop();
         terminada = true;
         animator.speed = 0f;
@@ -100,18 +116,40 @@ public class CineInicial : MonoBehaviour
         }
         else
         {
-            SavePartida.Singleton.AnimacionBosqueHecha();
+            if (sceneToChange != -1)
+                SavePartida.Singleton.AnimacionBosqueHecha();
         } 
         yield return new WaitForSecondsRealtime(0.5f);
-        SceneTransition.ChangeScene(sceneToChange, "fade");   // al pueblo
+        if (sceneToChange != -1) {
+            SceneTransition.ChangeScene(sceneToChange, "fade");   // al pueblo
+        }
+        else
+        {
+            StartCoroutine(CineFinal());
+        }
     }
+
+    IEnumerator CineFinal()
+    {
+        // Espera 1 frame para que Unity "suelte" la pulsación de Espacio anterior
+        yield return null;
+
+        pulsaciones = 1;
+        timer = 3f;
+        skipGroup.alpha = 1f;
+        skip.SetActive(true);
+
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        SceneTransition.ChangeScene(4, "fade");
+    }
+
 
     public void QuitarPausa()
     {
         pausado = false;
         audioSource.UnPause();
         pausa.SetActive(pausado);
-        animator.speed = pausado ? 0f : 1f;
+        animator.speed = 1f;
     }
 
 

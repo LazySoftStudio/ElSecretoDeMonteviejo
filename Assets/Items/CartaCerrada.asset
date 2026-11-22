@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CartaCerrada
   m_EditorClassIdentifier: 
   item:
-    imagen: {fileID: 21300000, guid: 2ab83301ef8fe834682f55793ece9656, type: 3}
+    imagen: {fileID: -1652518196, guid: 7bcf3878e9b23134785b4fe980e47dc6, type: 3}
     nombreItem: CartaCerrada
     type: 0

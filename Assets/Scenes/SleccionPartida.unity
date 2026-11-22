@@ -1468,6 +1468,7 @@ MonoBehaviour:
   inventario: {fileID: 0}
   antonio: {fileID: 0}
   pausa: {fileID: 0}
+  ajustes: {fileID: 0}
 --- !u!1 &902940440
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,6 +3156,7 @@ MonoBehaviour:
   inventario: {fileID: 0}
   antonio: {fileID: 0}
   pausa: {fileID: 0}
+  ajustes: {fileID: 0}
 --- !u!82 &1754989284
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3305,6 +3307,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 595f4aa46e88077469f2859ae16e4894, type: 2}
   - {fileID: 11400000, guid: f7501db000ccfb2498684f0b0a2e21ad, type: 2}
   - {fileID: 11400000, guid: d538c7a42321d3442b21df4c0a45367c, type: 2}
+  - {fileID: 11400000, guid: daaf7603a2c2ff44cba1fdc4729e3589, type: 2}
   inventoryName:
   - Foto de Juan Fran
   - Paquete El Botijo
@@ -3329,6 +3332,7 @@ MonoBehaviour:
   - Mechero JF+E
   - CartaAbierta
   - CartaCerrada
+  - Paquete El Botijo
   cursor: {fileID: 2800000, guid: 3aa2d3d387a1565419e31edeaf276143, type: 3}
 --- !u!4 &1852818938
 Transform:
