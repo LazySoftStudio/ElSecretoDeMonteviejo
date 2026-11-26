@@ -41048,7 +41048,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3351209383513116741, guid: 62232c1c549c3d14daf85d290b3c6d81, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2036949539}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2723045555234212607, guid: 62232c1c549c3d14daf85d290b3c6d81, type: 3}
       insertIndex: -1
@@ -41059,6 +41062,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2723045555234212607, guid: 62232c1c549c3d14daf85d290b3c6d81, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1570082601}
+    - targetCorrespondingSourceObject: {fileID: 2723045555234212607, guid: 62232c1c549c3d14daf85d290b3c6d81, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1570082607}
     - targetCorrespondingSourceObject: {fileID: 3436620317516457360, guid: 62232c1c549c3d14daf85d290b3c6d81, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1240781502}
@@ -51830,18 +51836,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d94297059f8b05439a15efa621c5d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntoDescansar: {fileID: 846940236}
-  puntoComer: {fileID: 1886288640}
-  puntoBanio: {fileID: 120766219}
+  mundo: {fileID: 1770586329}
   cansancio: 0
   ganasComer: 0
   ganasIrBanio: 0
   ganasTrabajar: 0
-  incremento: 0.001
+  incremento: 0.0003
   tiempoEsperaComer: 3
   tiempoEsperaDescansar: 5
   tiempoEsperaBanio: 3
+  accionActual: 0
   pausa: {fileID: 847641160}
+  objetoCabeza: {fileID: 2036949540}
+  comer: {fileID: -1260821582, guid: ae134700ee347484c88afe2c89823b54, type: 3}
+  banio: {fileID: 363139333, guid: 993d6202e8d0d5c499c6a835bcc04a8a, type: 3}
+  descansar: {fileID: -869215600, guid: 6302782456796784abd227fd9d62afdf, type: 3}
 --- !u!114 &1570082603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51868,7 +51877,7 @@ MonoBehaviour:
       nodes:
       - name: Cansancio
         id: 7a773cb2-22f5-470f-934d-2aa0bf54f9df
-        position: {x: 467.2, y: 308}
+        position: {x: 0, y: 0}
         node:
           rid: 623657818263912705
         references:
@@ -51881,19 +51890,20 @@ MonoBehaviour:
         parentIds:
         - b965e86e-4ffa-4e4d-bb61-770826c0e346
         childIds: []
-      - name: Lineal
+      - name: GanasDescansar
         id: b965e86e-4ffa-4e4d-bb61-770826c0e346
-        position: {x: 736, y: 312}
+        position: {x: 300, y: 0}
         node:
           rid: 623657818263912707
         references: []
         parentIds:
         - 29bd9a52-23ad-4f16-b655-0d921e3faeaf
+        - 91ace487-7940-4bda-b6d7-c5c8c86fcfd7
         childIds:
         - 7a773cb2-22f5-470f-934d-2aa0bf54f9df
       - name: Descansar
         id: 29bd9a52-23ad-4f16-b655-0d921e3faeaf
-        position: {x: 1038.4, y: 324}
+        position: {x: 600, y: -100}
         node:
           rid: 623657818263912708
         references:
@@ -51907,7 +51917,7 @@ MonoBehaviour:
         - b965e86e-4ffa-4e4d-bb61-770826c0e346
       - name: GanasComer
         id: c404e1e1-5e11-4055-90bf-76bc2ce2e2f5
-        position: {x: 473.6, y: 485.6}
+        position: {x: 0, y: 200}
         node:
           rid: 623657818263912731
         references:
@@ -51922,7 +51932,7 @@ MonoBehaviour:
         childIds: []
       - name: Comer
         id: 477a2c87-0390-45a3-bd4f-2e06b4cfcea4
-        position: {x: 1038.4, y: 504.80002}
+        position: {x: 600, y: 100}
         node:
           rid: 623657818263912734
         references:
@@ -51934,19 +51944,20 @@ MonoBehaviour:
         parentIds: []
         childIds:
         - 7dadcf81-f63b-43a7-b66e-4479dde616b9
-      - name: Sigmoide
+      - name: GanasComer
         id: 7dadcf81-f63b-43a7-b66e-4479dde616b9
-        position: {x: 760, y: 494.4}
+        position: {x: 300, y: 200}
         node:
           rid: 623657818263912736
         references: []
         parentIds:
         - 477a2c87-0390-45a3-bd4f-2e06b4cfcea4
+        - 91ace487-7940-4bda-b6d7-c5c8c86fcfd7
         childIds:
         - c404e1e1-5e11-4055-90bf-76bc2ce2e2f5
       - name: GanasBanio
         id: f452f0a3-b81c-4c58-95f6-3d68de82f53e
-        position: {x: 465.6, y: 672.80005}
+        position: {x: 0, y: 400}
         node:
           rid: 623657818263912747
         references:
@@ -51961,7 +51972,7 @@ MonoBehaviour:
         childIds: []
       - name: Banio
         id: 01b54d92-173b-4d17-a07c-7efb6f839559
-        position: {x: 1030.4, y: 692}
+        position: {x: 600, y: 500}
         node:
           rid: 623657818263912749
         references:
@@ -51973,16 +51984,53 @@ MonoBehaviour:
         parentIds: []
         childIds:
         - d6e4a702-6699-40d5-baee-4678e741cc64
-      - name: Sigmoide_2
+      - name: "GanasIrBa\xF1o"
         id: d6e4a702-6699-40d5-baee-4678e741cc64
-        position: {x: 752, y: 681.60004}
+        position: {x: 300, y: 400}
         node:
           rid: 623657818263912751
         references: []
         parentIds:
         - 01b54d92-173b-4d17-a07c-7efb6f839559
+        - 91ace487-7940-4bda-b6d7-c5c8c86fcfd7
         childIds:
         - f452f0a3-b81c-4c58-95f6-3d68de82f53e
+      - name: Trabajar
+        id: 91ace487-7940-4bda-b6d7-c5c8c86fcfd7
+        position: {x: 642.4, y: 315.19998}
+        node:
+          rid: 623657886599872583
+        references: []
+        parentIds:
+        - 864cf6c1-8fbf-486a-8299-4750665882d6
+        childIds:
+        - b965e86e-4ffa-4e4d-bb61-770826c0e346
+        - 7dadcf81-f63b-43a7-b66e-4479dde616b9
+        - d6e4a702-6699-40d5-baee-4678e741cc64
+      - name: GanasTrabajar
+        id: 864cf6c1-8fbf-486a-8299-4750665882d6
+        position: {x: 900, y: 300}
+        node:
+          rid: 623657886599872584
+        references: []
+        parentIds:
+        - 0ccd6034-f1c1-4a7c-beb8-0e853c20379f
+        childIds:
+        - 91ace487-7940-4bda-b6d7-c5c8c86fcfd7
+      - name: Trabajar
+        id: 0ccd6034-f1c1-4a7c-beb8-0e853c20379f
+        position: {x: 1200, y: 300}
+        node:
+          rid: 623657886599872585
+        references:
+        - fieldName: Action
+          value:
+            rid: 623657886599872586
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds:
+        - 864cf6c1-8fbf-486a-8299-4750665882d6
     pushPerceptions: []
   references:
     version: 2
@@ -52075,11 +52123,50 @@ MonoBehaviour:
         PullingEnabled: 1
         GrownRate: 35
         Midpoint: 0.5
+    - rid: 623657886599872583
+      type: {class: WeightedFusionFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        Weights:
+        - 0.33
+        - 0.33
+        - 0.33
+    - rid: 623657886599872584
+      type: {class: LinearCurveFactor, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        Slope: -1
+        YIntercept: 1
+    - rid: 623657886599872585
+      type: {class: UtilityAction, ns: BehaviourAPI.UtilitySystems, asm: BehaviourAPI.UtilitySystems}
+      data:
+        PullingEnabled: 1
+        FinishSystemOnComplete: 0
+    - rid: 623657886599872586
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: TrabajoBandos
+          methodName: Pasear
 --- !u!4 &1570082605 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3351209383513116741, guid: 62232c1c549c3d14daf85d290b3c6d81, type: 3}
   m_PrefabInstance: {fileID: 1240781498}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1570082607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570082598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d43076e1cf3414b992e1000cc91855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aldeanoGen: {fileID: 1570082602}
+  trabajo: {fileID: -1612503527, guid: b287a7e37d3b16b459e4748405e61cb5, type: 3}
 --- !u!1 &1570723450 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3430799655715550691, guid: 195765cd87884284baf7fed87b563874, type: 3}
@@ -57820,6 +57907,67 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1770586328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1770586330}
+  - component: {fileID: 1770586329}
+  m_Layer: 0
+  m_Name: Mundo
+  m_TagString: Mundo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1770586329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770586328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d07841dbbb2fff2469fe4eba46dedbf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lugaresDescansar:
+  - {fileID: 846940236}
+  lugaresComer:
+  - {fileID: 1886288640}
+  "lugaresBa\xF1o":
+  - {fileID: 120766219}
+  puntosRandom:
+  - {fileID: 1268779899}
+  - {fileID: 1427556258}
+  - {fileID: 613378888}
+  - {fileID: 2066834682}
+  - {fileID: 1478022680}
+  - {fileID: 1042937912}
+  - {fileID: 514337082}
+  - {fileID: 18109391}
+  - {fileID: 1608984092}
+  - {fileID: 1094464425}
+--- !u!4 &1770586330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770586328}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1880.4921, y: -1.4196953, z: 61.015053}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778060788 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5529861458853006245, guid: a877bc0f48082b44cbdb188a0955f5d8, type: 3}
@@ -60041,17 +60189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d43076e1cf3414b992e1000cc91855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntosAleatorios:
-  - {fileID: 1268779899}
-  - {fileID: 1427556258}
-  - {fileID: 613378888}
-  - {fileID: 2066834682}
-  - {fileID: 1478022680}
-  - {fileID: 1042937912}
-  - {fileID: 514337082}
-  - {fileID: 18109391}
-  - {fileID: 1608984092}
-  - {fileID: 1094464425}
+  aldeanoGen: {fileID: 0}
+  trabajo: {fileID: 0}
 --- !u!195 &1857426285
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -65651,6 +65790,93 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6034025463537472339, guid: a877bc0f48082b44cbdb188a0955f5d8, type: 3}
+--- !u!1 &2036949538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036949539}
+  - component: {fileID: 2036949540}
+  m_Layer: 0
+  m_Name: ObjetoCabeza
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2036949539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036949538}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0227, z: 0.00145}
+  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1570082605}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2036949540
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036949538}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 363139333, guid: 993d6202e8d0d5c499c6a835bcc04a8a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2037944301 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8463327444558690473, guid: a877bc0f48082b44cbdb188a0955f5d8, type: 3}
@@ -69768,3 +69994,4 @@ SceneRoots:
   - {fileID: 481949299}
   - {fileID: 493986213}
   - {fileID: 654032308}
+  - {fileID: 1770586330}

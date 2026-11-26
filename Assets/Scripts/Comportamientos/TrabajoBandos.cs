@@ -5,20 +5,46 @@ public class TrabajoBandos : MonoBehaviour
 {
     private NavMeshAgent agente;
 
-    public Transform[] puntosAleatorios;
-
+    [SerializeField]private AldeanoGenerico aldeanoGen;
     private bool aldeanoCercano;
-    private bool mismoBando; 
+    private bool mismoBando;
+    public Sprite trabajo;
 
     void Start()
     {
         agente = GetComponent<NavMeshAgent>();
     }
 
+    private void Update()
+    {
+        //si llega elige otro punto nuevo
+        if (HaLlegadoAlDestino() && aldeanoGen.accionActual == AldeanoGenerico.AccionActual.Trabajar)
+        {
+            agente.SetDestination(aldeanoGen.mundo.GetLugarRandom().position);
+        }
+
+    }
     public void Pasear()
     {
+        aldeanoGen.objetoCabeza.sprite = trabajo;
+        aldeanoGen.accionActual = AldeanoGenerico.AccionActual.Trabajar;
         Debug.Log(this.name + ": Me voy a pasear");  
-        int punto = Random.Range(0, puntosAleatorios.Length);
-        agente.SetDestination(puntosAleatorios[punto].position); 
+        agente.SetDestination(aldeanoGen.mundo.GetLugarRandom().position);
+    }
+
+
+    bool HaLlegadoAlDestino()
+    {
+        if (agente.pathPending)
+            return false;
+
+        if (agente.remainingDistance <= agente.stoppingDistance)
+        {
+            if (!agente.hasPath || agente.velocity.sqrMagnitude == 0f)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

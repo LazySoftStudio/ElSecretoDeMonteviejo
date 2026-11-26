@@ -7,6 +7,7 @@ TagManager:
   - DiaNoche
   - SalidaBosque
   - TargetBosque
+  - Mundo
   layers:
   - Default
   - TransparentFX
