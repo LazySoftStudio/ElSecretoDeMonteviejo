@@ -1,4 +1,6 @@
 using System.Collections; // Necesario para usar corrutinas (IEnumerator)
+using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -17,7 +19,7 @@ public class AldeanoGenerico : MonoBehaviour
     [Header("Percepciones incrementos")]
     public float incremento = 0.01f;
     [Header("Tiempos de espera")]
-    public float tiempoEsperaComer = 3f;
+    public float tiempoEsperaComer = 4.125f; //tiempo de la animación
     public float tiempoEsperaDescansar = 5f;
     public float tiempoEsperaBanio = 3f;
     public enum AccionActual { Ninguna, Descansar, Comer, Banio, Trabajar }
@@ -31,10 +33,16 @@ public class AldeanoGenerico : MonoBehaviour
     public Sprite banio;
     public Sprite descansar;
 
+    [Header("Animación")]
+    public Animator animator;
+
+    private Transform destinoActual; 
+
     void Awake()
     {
         agente = GetComponent<NavMeshAgent>();
         mundo = GameObject.FindWithTag("Mundo").GetComponent<Mundo>();
+        
     }
 
     void Update()
@@ -52,7 +60,33 @@ public class AldeanoGenerico : MonoBehaviour
         estaEsperando = true;
         float tiempoEspera = GetTiempoEspera();
 
-        yield return new WaitForSeconds(tiempoEspera);
+        if (accionActual == AccionActual.Descansar)
+        {
+            yield return StartCoroutine(Alinear(destinoActual.rotation)); 
+            animator.SetTrigger("Sentarse");
+            yield return new WaitForSeconds(tiempoEspera);
+            animator.SetTrigger("Levantarse");
+            yield return new WaitForSeconds(1.292f);
+        }
+        else if (accionActual == AccionActual.Comer)
+        {
+            animator.SetTrigger("Comer");
+            yield return new WaitForSeconds(tiempoEspera);
+        }
+        else if (accionActual == AccionActual.Banio)
+        {
+            Vector3 posIni = transform.position;
+            agente.enabled = false; //desactivar el navmesh para que no lo recoloque automaticamente
+            transform.position = new Vector3(posIni.x , posIni.y - 1000, posIni.z);
+            yield return new WaitForSeconds(tiempoEspera);
+            transform.position = posIni;
+            agente.enabled = true; 
+        }
+        else
+        {
+            yield return null; 
+        }
+
 
         if (accionActual == AccionActual.Descansar)
         {
@@ -67,6 +101,7 @@ public class AldeanoGenerico : MonoBehaviour
         else if (accionActual == AccionActual.Banio)
         {
             ganasIrBanio = 0f;
+
             //ganasComer += 0.1f;
         }
 
@@ -79,7 +114,8 @@ public class AldeanoGenerico : MonoBehaviour
         if (!estaEsperando)
         {
             objetoCabeza.sprite = descansar;
-            agente.SetDestination(mundo.GetLugarDescanso().position);
+            destinoActual = mundo.GetLugarDescanso(transform.position); 
+            agente.SetDestination(destinoActual.position);
             accionActual = AccionActual.Descansar;
         }
     }
@@ -89,7 +125,7 @@ public class AldeanoGenerico : MonoBehaviour
         if (!estaEsperando)
         {
             objetoCabeza.sprite = comer;
-            agente.SetDestination(mundo.GetLugarComer().position);
+            agente.SetDestination(mundo.GetLugarComer(transform.position).position);
             accionActual = AccionActual.Comer;
         }
     }
@@ -98,7 +134,7 @@ public class AldeanoGenerico : MonoBehaviour
         if (!estaEsperando)
         {
             objetoCabeza.sprite = banio;
-            agente.SetDestination(mundo.GetLugarBaño().position);
+            agente.SetDestination(mundo.GetLugarBaño(transform.position).position);
             accionActual = AccionActual.Banio;
         }
     }
@@ -156,5 +192,24 @@ public class AldeanoGenerico : MonoBehaviour
             return tiempoEsperaBanio;
         }
         return 0;
+    }
+
+    IEnumerator Alinear(Quaternion rotObjetivo)
+    {
+        float duracionGiro = 1f; 
+        float tiempo = 0f;
+        Quaternion rotacionInicial = transform.rotation;
+        Vector3 eulerObjetivo = rotObjetivo.eulerAngles;
+        Quaternion objetivoPlano = Quaternion.Euler(0f, eulerObjetivo.y + 180, 0f);
+
+        while (tiempo < duracionGiro)
+        {
+            transform.rotation = Quaternion.Slerp(rotacionInicial, objetivoPlano, tiempo / duracionGiro);
+            tiempo += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.rotation = objetivoPlano;
+
     }
 }
