@@ -49,7 +49,7 @@ public class AldeanoGenerico : MonoBehaviour
     {
         if (objetoCabeza.sprite == null) { objetoCabeza.gameObject.SetActive(false); } else { objetoCabeza.gameObject.SetActive(true); }
         if (pausa.gameObject.activeInHierarchy) return;
-        if (accionActual != AccionActual.Ninguna && !estaEsperando && HaLlegadoAlDestino())
+        if (accionActual != AccionActual.Ninguna && accionActual != AccionActual.Trabajar && !estaEsperando && HaLlegadoAlDestino())
         {
             StartCoroutine(EsperarYCompletarAccion());
         }

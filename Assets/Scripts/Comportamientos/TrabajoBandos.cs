@@ -10,6 +10,7 @@ public class TrabajoBandos : MonoBehaviour
     private bool mismoBando;
     public Sprite trabajo;
 
+    private Transform ultimoDestino; //para evitar que cuando llegue escoja el mismo punto
     void Start()
     {
         agente = GetComponent<NavMeshAgent>();
@@ -20,7 +21,7 @@ public class TrabajoBandos : MonoBehaviour
         //si llega elige otro punto nuevo
         if (HaLlegadoAlDestino() && aldeanoGen.accionActual == AldeanoGenerico.AccionActual.Trabajar)
         {
-            agente.SetDestination(aldeanoGen.mundo.GetLugarRandom().position);
+            IrANuevoPuntoRandom(); 
         }
 
     }
@@ -28,8 +29,24 @@ public class TrabajoBandos : MonoBehaviour
     {
         aldeanoGen.objetoCabeza.sprite = trabajo;
         aldeanoGen.accionActual = AldeanoGenerico.AccionActual.Trabajar;
-        Debug.Log(this.name + ": Me voy a pasear");  
-        agente.SetDestination(aldeanoGen.mundo.GetLugarRandom().position);
+        Debug.Log(this.name + ": Me voy a pasear");
+        IrANuevoPuntoRandom();
+    }
+
+    private void IrANuevoPuntoRandom()
+    {
+        Transform nuevoDestino = aldeanoGen.mundo.GetLugarRandom();
+
+        // Evitamos elegir el mismo punto en el que ya está
+        int intentos = 0;
+        while (nuevoDestino == ultimoDestino && intentos < 10)
+        {
+            nuevoDestino = aldeanoGen.mundo.GetLugarRandom();
+            intentos++;
+        }
+
+        ultimoDestino = nuevoDestino;
+        agente.SetDestination(nuevoDestino.position);
     }
 
 
@@ -38,12 +55,9 @@ public class TrabajoBandos : MonoBehaviour
         if (agente.pathPending)
             return false;
 
-        if (agente.remainingDistance <= agente.stoppingDistance)
+        if (agente.remainingDistance <= agente.stoppingDistance + 0.2f)
         {
-            if (!agente.hasPath || agente.velocity.sqrMagnitude == 0f)
-            {
-                return true;
-            }
+            return true;
         }
         return false;
     }
